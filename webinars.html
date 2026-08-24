@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webinars &amp; Masterclasses — TechRise DTI</title>
+  <meta name="description" content="Watch all official webinars and masterclass YouTube videos organised by TechRise DTI. Free digital skills, software design, and career guidance for African youth." />
+  <meta name="keywords" content="TechRise DTI Webinars, Masterclasses, Africa Tech Education, UI UX Masterclass, Tech Career Roadmap, Free Tech Training" />
+  <meta property="og:title" content="Webinars &amp; Masterclasses — TechRise DTI" />
+  <meta property="og:description" content="Explore all webinars, live streams, and masterclass videos organized by TechRise DTI." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="webinars-page">
+
+  <!-- Custom Magnetic Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">TechRise<span>DTI</span></div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+      <div class="loader-text">Loading TechRise Masterclasses...</div>
+    </div>
+  </div>
+
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" id="nav-logo-link">
+        <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="nav-logo-img" />
+        <span class="nav-logo-text">TechRise <span class="logo-accent">DTI</span></span>
+      </a>
+      <div class="nav-center">
+        <button class="nav-menu-btn" id="menu-toggle" aria-label="Toggle Menu">
+          <span class="menu-line"></span>
+          <span class="menu-label">Menu</span>
+        </button>
+      </div>
+      <a href="index.html#contact" class="nav-cta" id="nav-cta">
+        <span class="cta-dot"></span>
+        <span class="cta-text">Get Involved</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Fullscreen Navigation Menu Overlay -->
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-overlay-inner">
+      <nav class="menu-nav">
+        <a href="index.html#about" class="menu-link" data-index="01">About Us</a>
+        <a href="index.html#mission" class="menu-link" data-index="02">Mission &amp; Vision</a>
+        
+        <div class="menu-dropdown-group" id="menu-programs-group">
+          <button class="menu-link menu-dropdown-toggle" id="menu-programs-toggle" data-index="03" aria-expanded="false">
+            <span>Programs</span>
+            <span class="menu-toggle-icon">+</span>
+          </button>
+          <div class="menu-dropdown-list" id="menu-programs-list">
+            <a href="scholarships.html" class="menu-sublink">
+              <span class="sublink-arrow">&#8594;</span>
+              <span>Tech Scholarships</span>
+            </a>
+            <a href="webinars.html" class="menu-sublink">
+              <span class="sublink-arrow">&#8594;</span>
+              <span>Literacy Workshops &amp; Webinars</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="index.html#stories" class="menu-link" data-index="04">Stories</a>
+        <a href="index.html#partners" class="menu-link" data-index="05">Partners</a>
+        <a href="index.html#contact" class="menu-link" data-index="06">Get Involved</a>
+      </nav>
+      <div class="menu-footer">
+        <div class="menu-social">
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">X</a>
+          <a href="#" class="social-link">Facebook</a>
+        </div>
+        <div class="menu-contact-info">
+          <span>info@techrisedti.org</span>
+          <span>Abuja, Nigeria · EST 2023</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="webinar-hero">
+    <div class="webinar-hero-glow"></div>
+    <div class="webinar-hero-grid-pattern"></div>
+    <div class="webinar-hero-container">
+      <div class="webinar-hero-badge reveal-up">
+        <span class="hero-dot"></span>
+        <span>TECHRISE DTI WEBINARS &amp; MASTERCLASSES</span>
+      </div>
+      <h1 class="webinar-hero-title reveal-up" data-delay="0.1">
+        Webinars &amp;<br>
+        <em>Masterclass Videos</em>
+      </h1>
+      <p class="webinar-hero-desc reveal-up" data-delay="0.2">
+        Watch all official webinars, masterclasses, and interactive live streams organized by TechRise DTI. Designed to guide African youth from curiosity to thriving digital careers in UI/UX design, software development, and modern technology.
+      </p>
+
+      <!-- Key Stats Bar -->
+      <div class="webinar-stats-strip reveal-up" data-delay="0.3">
+        <div class="w-stat-item">
+          <span class="w-stat-num">7+</span>
+          <span class="w-stat-label">Full Masterclasses</span>
+        </div>
+        <div class="w-stat-divider"></div>
+        <div class="w-stat-item">
+          <span class="w-stat-num">100%</span>
+          <span class="w-stat-label">Free YouTube Access</span>
+        </div>
+        <div class="w-stat-divider"></div>
+        <div class="w-stat-item">
+          <span class="w-stat-num">HD</span>
+          <span class="w-stat-label">High-Definition Video</span>
+        </div>
+        <div class="w-stat-divider"></div>
+        <div class="w-stat-item">
+          <span class="w-stat-num">Pan-African</span>
+          <span class="w-stat-label">Youth Impact</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ UPCOMING WEBINAR ANNOUNCEMENT BANNER ═════════════ -->
+  <div class="upcoming-webinar-bar" id="upcoming-webinar">
+    <div class="upcoming-webinar-inner">
+      <div class="upcoming-bar-left">
+        <span class="upcoming-live-badge">
+          <span class="upcoming-pulse"></span>
+          UPCOMING
+        </span>
+        <div class="upcoming-bar-text">
+          <span class="upcoming-bar-title">The AI Advantage: Who Will Benefit Most from Artificial Intelligence?</span>
+          <span class="upcoming-bar-meta">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Thursday, 27 August 2026
+            <span class="upcoming-bar-dot">·</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Live Webinar
+          </span>
+        </div>
+      </div>
+      <a href="https://forms.gle/xvCcqG6zfgRPTnKdA" target="_blank" rel="noopener" class="upcoming-register-btn">
+        Register Free
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <button class="upcoming-bar-close" id="close-upcoming-bar" aria-label="Close announcement">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="webinars-main-wrap">
+
+    <!-- Featured Spotlight Masterclass -->
+    <section class="featured-section">
+      <div class="webinars-inner-container">
+        <div class="section-top-label reveal-up">( FEATURED SPOTLIGHT MASTERCLASS )</div>
+        
+        <div class="featured-card reveal-up" data-delay="0.1">
+          <div class="featured-media-box" data-video="tech-path">
+            <img src="img/thumb_tech_path.jpg" alt="How to Identify Your Tech Path: From Curiosity to Career" class="featured-img" />
+            <div class="media-overlay-gradient"></div>
+            <button class="featured-play-btn open-modal-btn" data-video="tech-path" aria-label="Play Featured Masterclass">
+              <span class="play-icon-glow"></span>
+              <span class="play-icon">&#9658;</span>
+            </button>
+            <div class="featured-duration-tag">
+              <span class="live-pulse"></span> YouTube · Full Masterclass
+            </div>
+            <div class="featured-level-tag">Flagship Session</div>
+          </div>
+
+          <div class="featured-content-box">
+            <div class="featured-top-tags">
+              <span class="f-category-pill">Career Guidance</span>
+              <span class="f-date">TechRise DTI Official Series</span>
+            </div>
+            <h2 class="featured-title">HOW TO IDENTIFY YOUR TECH PATH: FROM CURIOSITY TO CAREER</h2>
+            <p class="featured-desc">
+              Discover how to find your ideal niche in the modern tech ecosystem. Whether you are curious about design, coding, product management, or data, this masterclass provides a concrete roadmap to navigate your learning and secure your first tech role.
+            </p>
+
+            <div class="featured-takeaways">
+              <div class="takeaway-title">Key Highlights of this Masterclass:</div>
+              <ul class="takeaway-list">
+                <li><span>&#10003;</span> Identifying your core strengths across design, code, and product</li>
+                <li><span>&#10003;</span> Building structured learning habits without getting overwhelmed</li>
+                <li><span>&#10003;</span> Transitioning from zero background to job-ready portfolio projects</li>
+              </ul>
+            </div>
+
+            <div class="featured-speaker-row">
+              <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="speaker-avatar" />
+              <div class="speaker-info">
+                <strong>TechRise DTI Mentorship Team</strong>
+                <span>Digital Transformation &amp; Career Mentors</span>
+              </div>
+            </div>
+
+            <div class="featured-action-row">
+              <button class="btn-primary open-modal-btn" data-video="tech-path">
+                <span>Watch Video in Modal</span>
+                <span class="btn-arrow">&#9658;</span>
+              </button>
+              <a href="https://www.youtube.com/watch?v=sX_nxPTKjxw" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <span>Open on YouTube</span>
+                <span class="btn-arrow">&#8599;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toolbar: Search & Category Filters -->
+    <section class="webinars-filter-section" id="browse">
+      <div class="webinars-inner-container">
+        
+        <div class="filter-header-bar reveal-up">
+          <div class="filter-heading">
+            <h3 class="filter-title">All TechRise Webinars/Masterclass Videos</h3>
+            <span class="video-count-badge" id="video-count-badge">Showing Webinars & Masterclasses</span>
+          </div>
+
+          <div class="search-input-wrapper">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" id="webinar-search" placeholder="Search masterclasses, topics, titles..." aria-label="Search masterclasses" />
+            <button class="search-clear-btn" id="search-clear" aria-label="Clear search">&times;</button>
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs-wrapper reveal-up" data-delay="0.1">
+          <button class="filter-tab active" data-category="all">
+            <span>All Videos</span>
+            <span class="tab-badge">7</span>
+          </button>
+          <button class="filter-tab" data-category="career">
+            <span>Career &amp; Tech Path</span>
+            <span class="tab-badge">3</span>
+          </button>
+          <button class="filter-tab" data-category="design">
+            <span>UI/UX &amp; Design</span>
+            <span class="tab-badge">2</span>
+          </button>
+          <button class="filter-tab" data-category="masterclasses">
+            <span>Masterclasses &amp; Streams</span>
+            <span class="tab-badge">2</span>
+          </button>
+        </div>
+
+        <!-- Video Grid: All 7 Real TechRise YouTube Videos -->
+        <div class="webinars-video-grid" id="webinars-grid">
+
+          <!-- Video 1: Reinventing Yourself for a Digital Future -->
+          <article class="webinar-card reveal-up" data-category="career" data-video="reinvent-future" data-delay="0.05">
+            <div class="card-thumb-wrap">
+              <img src="img/thumb_reinvent_future.jpg" alt="Reinventing Yourself for a Digital Future" class="card-thumb" />
+              <div class="card-thumb-overlay"></div>
+              <button class="card-play-btn open-modal-btn" data-video="reinvent-future" aria-label="Play Reinventing Yourself for a Digital Future">
+                <span class="card-play-icon">&#9658;</span>
+              </button>
+              <span class="card-duration">YouTube</span>
+              <span class="card-level level-beg">Beginner Perspective</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat-badge">Career Transition</span>
+                <span class="card-views">&#9658; TechRise Webinar</span>
+              </div>
+              <h4 class="card-title">TECHRISE DTI WEBINAR: Reinventing Yourself for a Digital Future: A Beginner Perspective</h4>
+              <p class="card-summary">
+                A transformative webinar exploring how beginners from any background can pivot into the digital economy, develop in-demand tech skills, and position themselves for high-growth opportunities.
+              </p>
+              <div class="card-speaker-meta">
+                <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="card-speaker-avatar" />
+                <div class="card-speaker-text">
+                  <strong>TechRise DTI</strong>
+                  <span>Webinar Series</span>
+                </div>
+              </div>
+              <div class="card-action-bar">
+                <button class="card-watch-btn open-modal-btn" data-video="reinvent-future">
+                  Watch Video <span>&#9658;</span>
+                </button>
+                <a href="https://www.youtube.com/watch?v=edQm-xG6qok" target="_blank" rel="noopener noreferrer" class="card-slides-btn">
+                  YouTube &#8599;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video 2: How to Identify Your Tech Path -->
+          <article class="webinar-card reveal-up" data-category="career" data-video="tech-path" data-delay="0.1">
+            <div class="card-thumb-wrap">
+              <img src="img/thumb_tech_path.jpg" alt="How to Identify Your Tech Path: From Curiosity to Career" class="card-thumb" />
+              <div class="card-thumb-overlay"></div>
+              <button class="card-play-btn open-modal-btn" data-video="tech-path" aria-label="Play How to Identify Your Tech Path">
+                <span class="card-play-icon">&#9658;</span>
+              </button>
+              <span class="card-duration">YouTube</span>
+              <span class="card-level level-int">All Levels</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat-badge">Career Guidance</span>
+                <span class="card-views">&#9658; TechRise Webinar</span>
+              </div>
+              <h4 class="card-title">HOW TO IDENTIFY YOUR TECH PATH: FROM CURIOSITY TO CAREER</h4>
+              <p class="card-summary">
+                A comprehensive guide to understanding tech career tracks. Learn how to map your personal interests to software engineering, product design, cybersecurity, data, or technical writing.
+              </p>
+              <div class="card-speaker-meta">
+                <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="card-speaker-avatar" />
+                <div class="card-speaker-text">
+                  <strong>TechRise DTI</strong>
+                  <span>Career Mentorship</span>
+                </div>
+              </div>
+              <div class="card-action-bar">
+                <button class="card-watch-btn open-modal-btn" data-video="tech-path">
+                  Watch Video <span>&#9658;</span>
+                </button>
+                <a href="https://www.youtube.com/watch?v=sX_nxPTKjxw" target="_blank" rel="noopener noreferrer" class="card-slides-btn">
+                  YouTube &#8599;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video 3: UI/UX Design Masterclass -->
+          <article class="webinar-card reveal-up" data-category="design" data-video="uiux-masterclass" data-delay="0.15">
+            <div class="card-thumb-wrap">
+              <img src="img/thumb_uiux_masterclass.jpg" alt="UI/UX Design Masterclass" class="card-thumb" />
+              <div class="card-thumb-overlay"></div>
+              <button class="card-play-btn open-modal-btn" data-video="uiux-masterclass" aria-label="Play UI/UX Design Masterclass">
+                <span class="card-play-icon">&#9658;</span>
+              </button>
+              <span class="card-duration">YouTube</span>
+              <span class="card-level level-beg">Masterclass</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat-badge">Product Design</span>
+                <span class="card-views">&#9658; Masterclass</span>
+              </div>
+              <h4 class="card-title">UI/UX DESIGN MASTERCLASS</h4>
+              <p class="card-summary">
+                Learn fundamental design principles, user journey mapping, typography, color psychology, and wireframing techniques used by top digital product designers.
+              </p>
+              <div class="card-speaker-meta">
+                <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="card-speaker-avatar" />
+                <div class="card-speaker-text">
+                  <strong>TechRise DTI</strong>
+                  <span>Design Academy</span>
+                </div>
+              </div>
+              <div class="card-action-bar">
+                <button class="card-watch-btn open-modal-btn" data-video="uiux-masterclass">
+                  Watch Video <span>&#9658;</span>
+                </button>
+                <a href="https://www.youtube.com/watch?v=dIOBxXVQ1Tw" target="_blank" rel="noopener noreferrer" class="card-slides-btn">
+                  YouTube &#8599;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video 4: Design. Code. Create. -->
+          <article class="webinar-card reveal-up" data-category="design" data-video="design-code-create" data-delay="0.2">
+            <div class="card-thumb-wrap">
+              <img src="img/thumb_design_code_create.jpg" alt="DESIGN. CODE. CREATE.: A BEGINNER'S GUIDE TO TECH SUCCESS" class="card-thumb" />
+              <div class="card-thumb-overlay"></div>
+              <button class="card-play-btn open-modal-btn" data-video="design-code-create" aria-label="Play Design Code Create">
+                <span class="card-play-icon">&#9658;</span>
+              </button>
+              <span class="card-duration">YouTube</span>
+              <span class="card-level level-beg">Beginner's Guide</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat-badge">Tech Fundamentals</span>
+                <span class="card-views">&#9658; TechRise Webinar</span>
+              </div>
+              <h4 class="card-title">DESIGN. CODE. CREATE.: A BEGINNER'S GUIDE TO TECH SUCCESS.</h4>
+              <p class="card-summary">
+                Connecting creative concepts with hands-on coding. Understand the synergy between UI design and front-end development, and how beginners can build real-world digital products.
+              </p>
+              <div class="card-speaker-meta">
+                <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="card-speaker-avatar" />
+                <div class="card-speaker-text">
+                  <strong>TechRise DTI</strong>
+                  <span>Skills Series</span>
+                </div>
+              </div>
+              <div class="card-action-bar">
+                <button class="card-watch-btn open-modal-btn" data-video="design-code-create">
+                  Watch Video <span>&#9658;</span>
+                </button>
+                <a href="https://www.youtube.com/watch?v=ONCXKWmWNho" target="_blank" rel="noopener noreferrer" class="card-slides-btn">
+                  YouTube &#8599;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video 5: Breaking Into Tech Without a CS Degree -->
+          <article class="webinar-card reveal-up" data-category="career" data-video="break-into-tech" data-delay="0.25">
+            <div class="card-thumb-wrap">
+              <img src="img/thumb_break_into_tech.jpg" alt="BREAKING INTO TECH WITHOUT A COMPUTER SCIENCE DEGREE" class="card-thumb" />
+              <div class="card-thumb-overlay"></div>
+              <button class="card-play-btn open-modal-btn" data-video="break-into-tech" aria-label="Play Breaking into Tech Without a CS Degree">
+                <span class="card-play-icon">&#9658;</span>
+              </button>
+              <span class="card-duration">YouTube</span>
+              <span class="card-level level-beg">Career Strategy</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat-badge">Career Strategy</span>
+                <span class="card-views">&#9658; TechRise Webinar</span>
+              </div>
+              <h4 class="card-title">BREAKING INTO TECH WITHOUT A COMPUTER SCIENCE DEGREE.</h4>
+              <p class="card-summary">
+                Practical, unfiltered advice on entering tech with non-traditional backgrounds. Learn how to showcase proof of work, leverage online certifications, and stand out to recruiters globally.
+              </p>
+              <div class="card-speaker-meta">
+                <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="card-speaker-avatar" />
+                <div class="card-speaker-text">
+                  <strong>TechRise DTI</strong>
+                  <span>Career Mentorship</span>
+                </div>
+              </div>
+              <div class="card-action-bar">
+                <button class="card-watch-btn open-modal-btn" data-video="break-into-tech">
+                  Watch Video <span>&#9658;</span>
+                </button>
+                <a href="https://www.youtube.com/watch?v=ARrZbt5qQsc" target="_blank" rel="noopener noreferrer" class="card-slides-btn">
+                  YouTube &#8599;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video 6: TechRise Masterclass January -->
+          <article class="webinar-card reveal-up" data-category="masterclasses" data-video="masterclass-jan" data-delay="0.3">
+            <div class="card-thumb-wrap">
+              <img src="img/thumb_masterclass_jan.jpg" alt="TechRise DTI Masterclass" class="card-thumb" />
+              <div class="card-thumb-overlay"></div>
+              <button class="card-play-btn open-modal-btn" data-video="masterclass-jan" aria-label="Play TechRise DTI Masterclass">
+                <span class="card-play-icon">&#9658;</span>
+              </button>
+              <span class="card-duration">YouTube</span>
+              <span class="card-level level-int">Masterclass</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat-badge">Special Masterclass</span>
+                <span class="card-views">&#9658; Masterclass Series</span>
+              </div>
+              <h4 class="card-title">Tech for Non-Tech Founders: Building &amp; Using Technology Confidently</h4>
+              <p class="card-summary">
+                An intensive masterclass designed to give students and professionals actionable skills in modern digital tools, problem solving, and technological innovation across African industries.
+              </p>
+              <div class="card-speaker-meta">
+                <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="card-speaker-avatar" />
+                <div class="card-speaker-text">
+                  <strong>TechRise DTI</strong>
+                  <span>Masterclass Series</span>
+                </div>
+              </div>
+              <div class="card-action-bar">
+                <button class="card-watch-btn open-modal-btn" data-video="masterclass-jan">
+                  Watch Video <span>&#9658;</span>
+                </button>
+                <a href="https://www.youtube.com/watch?v=R4AZbvnuj9Y" target="_blank" rel="noopener noreferrer" class="card-slides-btn">
+                  YouTube &#8599;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video 7: TechRise DTI Live Stream -->
+          <article class="webinar-card reveal-up" data-category="masterclasses" data-video="livestream-qa" data-delay="0.35">
+            <div class="card-thumb-wrap">
+              <img src="img/thumb_livestream_qa.jpg" alt="TechRise DTI Live Stream" class="card-thumb" />
+              <div class="card-thumb-overlay"></div>
+              <button class="card-play-btn open-modal-btn" data-video="livestream-qa" aria-label="Play TechRise DTI Live Stream">
+                <span class="card-play-icon">&#9658;</span>
+              </button>
+              <span class="card-duration">YouTube</span>
+              <span class="card-level level-beg">Live Stream</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat-badge">Community Live</span>
+                <span class="card-views">&#9658; Live Session</span>
+              </div>
+              <h4 class="card-title">Building Scalable Tech Companies from Africa: Lessons on Talent, Capital &amp; Global Impact</h4>
+              <p class="card-summary">
+                Live interactive Q&amp;A and community session discussing TechRise scholarships, laptop support programs, coding bootcamps, and answering questions directly from African learners.
+              </p>
+              <div class="card-speaker-meta">
+                <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="card-speaker-avatar" />
+                <div class="card-speaker-text">
+                  <strong>TechRise DTI</strong>
+                  <span>Community Leadership</span>
+                </div>
+              </div>
+              <div class="card-action-bar">
+                <button class="card-watch-btn open-modal-btn" data-video="livestream-qa">
+                  Watch Video <span>&#9658;</span>
+                </button>
+                <a href="https://www.youtube.com/watch?v=9Hrw22e5gS4" target="_blank" rel="noopener noreferrer" class="card-slides-btn">
+                  YouTube &#8599;
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- No Results Fallback -->
+        <div class="no-results-state" id="no-results-state" style="display: none;">
+          <div class="no-results-icon">&#128269;</div>
+          <h4>No masterclasses match your search</h4>
+          <p>Try searching for different keywords or reset your filters.</p>
+          <button class="btn-secondary" id="reset-filters-btn">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Upcoming Live Masterclasses Schedule -->
+  <section class="upcoming-webinars-section">
+    <div class="webinars-inner-container">
+      <div class="section-top-label reveal-up">( LIVE SESSIONS &amp; COMMUNITY )</div>
+      <div class="upcoming-header-row reveal-up">
+        <div>
+          <h2 class="upcoming-title">Upcoming Live Interactive Webinars</h2>
+          <p class="upcoming-subtitle">Participate live with our mentors, ask questions in real time, and join our Discord/Telegram learning groups.</p>
+        </div>
+        <div class="live-dot-indicator">
+          <span class="pulse-dot"></span> Next Live: Thu, 27 August 2026
+        </div>
+      </div>
+
+      <div class="upcoming-list reveal-up" data-delay="0.1">
+
+        <!-- ★ FEATURED UPCOMING: The AI Advantage — Aug 27 -->
+        <div class="upcoming-item upcoming-item-featured">
+          <div class="upcoming-date-box upcoming-date-box-hot">
+            <span class="date-day">27</span>
+            <span class="date-month">AUG</span>
+          </div>
+          <div class="upcoming-info">
+            <span class="upcoming-tag">Artificial Intelligence</span>
+            <h4 class="upcoming-item-title">The AI Advantage: Who Will Benefit Most from Artificial Intelligence?</h4>
+            <p class="upcoming-item-meta">Live Webinar · Thursday, 27 August 2026 · Free for all participants</p>
+          </div>
+          <div class="upcoming-action">
+            <a href="https://forms.gle/xvCcqG6zfgRPTnKdA" target="_blank" rel="noopener" class="btn-primary rsvp-btn">
+              <span>Register Free</span>
+              <span class="btn-arrow">&#8599;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaker / Partner Callout -->
+  <section class="host-webinar-section">
+    <div class="webinars-inner-container">
+      <div class="host-card reveal-up">
+        <div class="host-content">
+          <div class="host-tag">( MENTORSHIP &amp; LEADERSHIP )</div>
+          <h3 class="host-title">Want to host a webinar or mentor grassroots African talent?</h3>
+          <p class="host-desc">
+            We collaborate with passionate tech professionals, designers, and engineering leaders to deliver impactful, career-transforming knowledge to youth across Africa.
+          </p>
+          <div class="host-buttons">
+            <a href="index.html#contact" class="btn-primary">
+              <span>Apply as a Guest Speaker</span>
+              <span class="btn-arrow">&#8599;</span>
+            </a>
+            <a href="mailto:info@techrisedti.org" class="btn-secondary">
+              <span>Contact TechRise Team</span>
+            </a>
+          </div>
+        </div>
+        <div class="host-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Player Interactive Modal (Plays Real YouTube Embeds) -->
+  <div class="video-modal-backdrop" id="video-modal" aria-hidden="true" role="dialog">
+    <div class="video-modal-window">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Video">&times;</button>
+      
+      <!-- Video Screen Area: Real YouTube iframe -->
+      <div class="modal-video-viewport">
+        <iframe id="modal-youtube-iframe" class="youtube-modal-frame" src="" title="TechRise DTI YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <!-- Modal Video Details -->
+      <div class="modal-details-pane">
+        <div class="modal-details-header">
+          <div>
+            <span class="modal-cat-tag" id="modal-cat-tag">Career Guidance</span>
+            <h3 class="modal-video-title" id="modal-title">HOW TO IDENTIFY YOUR TECH PATH: FROM CURIOSITY TO CAREER</h3>
+            <div class="modal-meta-line">
+              <span id="modal-speaker-name">By TechRise DTI</span> · 
+              <span id="modal-duration">Full Masterclass</span> · 
+              <span>Free on YouTube</span>
+            </div>
+          </div>
+          <div class="modal-action-buttons">
+            <a href="#" id="modal-youtube-link" target="_blank" rel="noopener noreferrer" class="btn-primary modal-download-btn">
+              <span>Open on YouTube</span>
+              <span class="btn-arrow">&#8599;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-tabs-strip">
+          <button class="modal-tab-btn active" data-tab="overview">About This Session</button>
+          <button class="modal-tab-btn" data-tab="speaker">About TechRise DTI</button>
+        </div>
+
+        <div class="modal-tab-content active" id="tab-overview">
+          <p id="modal-description" class="modal-desc-text">
+            In this masterclass, discover how to navigate the vast tech ecosystem and build a structured roadmap from initial curiosity to your first tech job.
+          </p>
+          <div class="modal-resources-box">
+            <strong>About TechRise DTI Masterclasses:</strong>
+            <ul>
+              <li>&#10003; 100% Free &amp; Open Access on YouTube</li>
+              <li>&#10003; Beginner-friendly with practical, real-world examples</li>
+              <li>&#10003; Direct mentorship and career pathways across Africa</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="modal-tab-content" id="tab-speaker">
+          <div class="speaker-tab-card">
+            <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="speaker-tab-avatar" id="modal-speaker-avatar" />
+            <div class="speaker-tab-bio">
+              <h4 id="modal-speaker-name-tab">TechRise DTI</h4>
+              <p id="modal-speaker-role">Digital Transformation Initiative</p>
+              <p class="bio-text">TechRise DTI is a non-profit organization dedicated to empowering African youth through grassroots tech education, laptop scholarships, and world-class digital skills training.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- RSVP Confirmation Toast -->
+  <div class="toast-notification" id="toast">
+    <span class="toast-icon">&#10003;</span>
+    <div class="toast-text" id="toast-text">Registration confirmed! We've sent the session link to your email.</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="footer-logo-img" />
+          <span class="footer-logo-text">TechRise <span class="footer-logo-accent">DTI</span></span>
+        </div>
+        <p class="footer-tagline">Driving Digital Transformation &amp; World-Class Tech Education Across Africa.</p>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-title">Contact Us</span>
+        <div class="footer-contact-items">
+          <a href="mailto:info@techrisedti.org" class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span><strong>Email:</strong> info@techrisedti.org</span>
+          </a>
+          <a href="tel:+2348122517006" class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span><strong>Phone:</strong> +234 812 251 7006</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <span>&#169; 2025 TechRise DTI. All rights reserved.</span>
+        <span>A Non-Profit Organisation · Digital Transformation Initiative</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="scholarships.html">Tech Scholarships</a>
+        <a href="webinars.html">Webinars</a>
+        <a href="index.html#contact">Get Involved</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/techrise-dti/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.89 0-1.61.72-1.61 1.61a1.61 1.61 0 0 0 1.61 1.61 1.61 1.61 0 0 0 1.61-1.61c0-.89-.72-1.61-1.61-1.61z"/></svg>
+        </a>
+        <a href="https://x.com/techRiseDTI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X (formerly Twitter)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/techriseDTI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@Techrise-dti" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

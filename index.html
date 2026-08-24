@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechRise DTI — Digital Transformation for Africa</title>
+  <meta name="description" content="TechRise for Digital Transformation Initiative is a tech non-profit driving digital transformation in Africa through grassroots education, youth empowerment, and tech-enabled community development." />
+  <meta name="keywords" content="TechRise DTI, Africa tech, digital transformation, NGO, youth empowerment, coding education, Africa" />
+  <meta property="og:title" content="TechRise DTI — Digital Transformation for Africa" />
+  <meta property="og:description" content="Driving digital transformation in Africa through grassroots education and youth empowerment." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">TechRise<span>DTI</span></div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+      <div class="loader-text">Loading Africa's Digital Future...</div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="nav-logo-img" />
+        <span class="nav-logo-text">TechRise <span class="logo-accent">DTI</span></span>
+      </a>
+      <div class="nav-center">
+        <button class="nav-menu-btn" id="menu-toggle" aria-label="Toggle Menu">
+          <span class="menu-line"></span>
+          <span class="menu-label">Menu</span>
+        </button>
+      </div>
+      <a href="#contact" class="nav-cta" id="nav-cta">
+        <span class="cta-dot"></span>
+        <span class="cta-text">Get Involved</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-overlay-inner">
+      <nav class="menu-nav">
+        <a href="#about" class="menu-link" data-index="01">About Us</a>
+        <a href="#mission" class="menu-link" data-index="02">Mission &amp; Vision</a>
+        
+        <div class="menu-dropdown-group" id="menu-programs-group">
+          <button class="menu-link menu-dropdown-toggle" id="menu-programs-toggle" data-index="03" aria-expanded="false">
+            <span>Programs</span>
+            <span class="menu-toggle-icon">+</span>
+          </button>
+          <div class="menu-dropdown-list" id="menu-programs-list">
+            <a href="scholarships.html" class="menu-sublink">
+              <span class="sublink-arrow">&#8594;</span>
+              <span>Tech Scholarships</span>
+            </a>
+            <a href="webinars.html" class="menu-sublink">
+              <span class="sublink-arrow">&#8594;</span>
+              <span>Literacy Workshops &amp; Webinars</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="#stories" class="menu-link" data-index="04">Stories</a>
+        <a href="#partners" class="menu-link" data-index="05">Partners</a>
+        <a href="#contact" class="menu-link" data-index="06">Get Involved</a>
+      </nav>
+      <div class="menu-footer">
+        <div class="menu-social">
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">X</a>
+          <a href="#" class="social-link">Facebook</a>
+        </div>
+        <div class="menu-contact-info">
+          <span>info@techrisedti.org</span>
+          <span>Abuja, Nigeria · EST 2023</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-map-wrapper" id="hero-map-wrapper">
+        <img src="img/africa_map.jpg" alt="Digital map of Africa" class="hero-bg-img" />
+        <div class="hero-map-nodes">
+          <div class="map-node" style="top: 50%; left: 47%;" data-city="Abuja"></div>
+          <div class="map-node" style="top: 54%; left: 45%;" data-city="Lagos"></div>
+          <div class="map-node" style="top: 56%; left: 62%;" data-city="Nairobi"></div>
+          <div class="map-node" style="top: 52%; left: 43%;" data-city="Accra"></div>
+          <div class="map-node" style="top: 77%; left: 55%;" data-city="Cape Town"></div>
+          <div class="map-node" style="top: 31%; left: 58%;" data-city="Cairo"></div>
+        </div>
+      </div>
+      <div class="hero-bg-overlay"></div>
+      <canvas class="hero-particles" id="hero-particles"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag reveal-up">
+        <span class="tag-dot"></span>
+        <span>Africa's Digital Future, Now</span>
+      </div>
+      <h1 class="hero-headline">
+        <span class="headline-line reveal-up" data-delay="0.1">EMPOWERING</span>
+        <span class="headline-line headline-mid reveal-up" data-delay="0.2">
+          <span class="headline-word">AFRICA</span>
+          <span class="headline-word">THROUGH</span>
+        </span>
+        <span class="headline-line headline-accent reveal-up" data-delay="0.3">DIGITAL TRANSFORMATION</span>
+      </h1>
+    </div>
+    <div class="hero-footer">
+      <div class="hero-footer-left">
+        <p class="hero-desc">TechRise DTI drives digital transformation<br>across Africa through grassroots education,<br>youth empowerment &amp; community development.</p>
+      </div>
+      <div class="hero-footer-center">
+        <div class="hero-services-label">WORKING ON</div>
+        <div class="hero-services">
+          <div class="hero-services-col">
+            <span>/ Grassroots Education</span>
+            <span>/ Youth Empowerment</span>
+          </div>
+          <div class="hero-services-col">
+            <span>/ Digital Infrastructure</span>
+            <span>/ Women in Tech</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-footer-right">
+        <a href="mailto:info@techrisedti.org">info@techrisedti.org</a>
+        <span>Abuja, Nigeria · EST 2023</span>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Digital Transformation</span><span class="sep">&#10022;</span>
+        <span>Youth Empowerment</span><span class="sep">&#10022;</span>
+        <span>Grassroots Education</span><span class="sep">&#10022;</span>
+        <span>Women in Tech</span><span class="sep">&#10022;</span>
+        <span>Community Development</span><span class="sep">&#10022;</span>
+        <span>Tech Scholarships</span><span class="sep">&#10022;</span>
+        <span>Digital Transformation</span><span class="sep">&#10022;</span>
+        <span>Youth Empowerment</span><span class="sep">&#10022;</span>
+        <span>Job Starter Pack Scholarships</span><span class="sep">&#10022;</span>
+        <span>Women in Tech</span><span class="sep">&#10022;</span>
+        <span>Community Development</span><span class="sep">&#10022;</span>
+        <span>Artificial Intelligence</span><span class="sep">&#10022;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ UPCOMING WEBINAR SPOTLIGHT — HOMEPAGE ════════════ -->
+  <section class="hw-section" id="upcoming-webinar-home">
+    <div class="hw-inner">
+
+      <!-- Left: Content -->
+      <div class="hw-content reveal-up">
+        <div class="hw-eyebrow">
+          <span class="hw-eyebrow-dot"></span>
+          UPCOMING LIVE WEBINAR
+        </div>
+        <h2 class="hw-title">
+          The AI Advantage:<br>
+          <em class="hw-title-em">Who Will Benefit Most from<br>Artificial Intelligence?</em>
+        </h2>
+        <div class="hw-meta-row">
+          <div class="hw-meta-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Thursday, 27 August 2026</span>
+          </div>
+          <div class="hw-meta-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Live Webinar</span>
+          </div>
+          <div class="hw-meta-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>TechRise DTI</span>
+          </div>
+        </div>
+        <p class="hw-desc">
+          Join us for a thought-provoking live session unpacking the real impact of Artificial Intelligence — who stands to gain the most, how African youth can leverage AI as a tool for economic advancement, and what skills matter in an AI-powered world.
+        </p>
+        <div class="hw-tags">
+          <span>Artificial Intelligence</span>
+          <span>Future of Work</span>
+          <span>Digital Skills</span>
+          <span>Free to Attend</span>
+        </div>
+        <div class="hw-cta-row">
+          <a href="https://forms.gle/xvCcqG6zfgRPTnKdA" target="_blank" rel="noopener" class="hw-btn-primary">
+            <span>Register Free</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="webinars.html" class="hw-btn-ghost">View All Webinars</a>
+        </div>
+      </div>
+
+      <!-- Right: Visual Card -->
+      <div class="hw-visual reveal-up" data-delay="0.1">
+        <div class="hw-card">
+          <div class="hw-card-header">
+            <span class="hw-card-badge">
+              <span class="hw-card-pulse"></span>
+              LIVE · 27 AUG 2026
+            </span>
+          </div>
+          <div class="hw-card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 7.76a6 6 0 0 0 0 8.49"/></svg>
+          </div>
+          <h3 class="hw-card-title">The AI Advantage</h3>
+          <p class="hw-card-sub">Who Will Benefit Most from Artificial Intelligence?</p>
+          <div class="hw-card-divider"></div>
+          <div class="hw-card-detail-list">
+            <div class="hw-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Thursday, 27 August 2026</span>
+            </div>
+            <div class="hw-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Open to Everyone · Free</span>
+            </div>
+            <div class="hw-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg>
+              <span>Hosted by TechRise DTI</span>
+            </div>
+          </div>
+          <a href="https://forms.gle/xvCcqG6zfgRPTnKdA" target="_blank" rel="noopener" class="hw-card-register">
+            Secure Your Spot →
+          </a>
+        </div>
+        <!-- Decorative glow -->
+        <div class="hw-card-glow"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about-blur-section" id="about">
+    <div class="blur-bg-grid">
+      <span class="bg-cross">+</span><span class="bg-cross">+</span>
+      <span class="bg-cross">+</span><span class="bg-cross">+</span>
+      <span class="bg-cross">+</span><span class="bg-cross">+</span>
+      <span class="bg-cross">+</span><span class="bg-cross">+</span>
+    </div>
+    <div class="blur-text-reveal" id="blur-reveal-text">
+      <span class="blur-word">empowering</span>
+      <span class="blur-word">African</span>
+      <span class="blur-word">Youth</span>
+      <span class="blur-word">through</span>
+      <span class="blur-word">digital</span>
+      <span class="blur-word">transformation.</span>
+    </div>
+  </section>
+
+  <section class="programs-list-section" id="programs">
+    <div class="programs-header">
+      <span class="col-label">( OUR PROGRAMS )</span>
+      <span class="col-label right">( FOCUS AREA )</span>
+    </div>
+    <div class="programs-divider"></div>
+
+    <a href="scholarships.html" class="program-row program-row-link" data-program="scholarships" id="program-scholarships-link">
+      <div class="program-title">
+        <span class="program-title-text">Tech Scholarships</span>
+        <span class="program-row-badge">In Partnership with Dev &amp; Design &#8599;</span>
+      </div>
+      <span class="program-tags">In partnership with Dev &amp; Design · Full Tuition &amp; Laptops</span>
+      <div class="program-hover-img">
+        <img src="img/program_scholarships.jpg" alt="Tech Scholarships" />
+      </div>
+    </a>
+    <div class="programs-divider"></div>
+
+    <div class="program-row" data-program="jobpack">
+      <div class="program-title">
+        <span class="program-title-text">Job Starter Pack Scholarships</span>
+        <span class="program-row-badge">In Partnership with Dev &amp; Design</span>
+      </div>
+      <span class="program-tags">In partnership with Dev &amp; Design · Laptops &amp; Developer Tools</span>
+      <div class="program-hover-img">
+        <img src="img/program_jobpack.jpg" alt="Job Starter Pack Scholarships" />
+      </div>
+    </div>
+    <div class="programs-divider"></div>
+
+    <div class="program-row" data-program="women">
+      <div class="program-title">
+        <span class="program-title-text">Women/Girl, Youth Empowerment</span>
+      </div>
+      <span class="program-tags">Gender Equity, STEM Leadership</span>
+      <div class="program-hover-img">
+        <img src="img/program_women_tech.jpg" alt="Women/Girl, Youth Empowerment" />
+      </div>
+    </div>
+    <div class="programs-divider"></div>
+
+    <div class="program-row" data-program="hubs">
+      <div class="program-title">
+        <span class="program-title-text">Entrepreneurship &amp; Innovation Hubs</span>
+      </div>
+      <span class="program-tags">Startups, Tech Hubs &amp; Incubators</span>
+      <div class="program-hover-img">
+        <img src="img/program_community.jpg" alt="Entrepreneurship &amp; Innovation Hubs" />
+      </div>
+    </div>
+    <div class="programs-divider"></div>
+
+    <a href="webinars.html" class="program-row program-row-link" data-program="workshops" id="program-workshops-link">
+      <div class="program-title">
+        <span class="program-title-text">Literacy Workshops &amp; Webinars</span>
+        <span class="program-row-badge">Explore Masterclasses &#8599;</span>
+      </div>
+      <span class="program-tags">Digital Literacy, Free Masterclasses &amp; Videos</span>
+      <div class="program-hover-img">
+        <img src="img/program_education.jpg" alt="Literacy Workshops &amp; Webinars" />
+      </div>
+    </a>
+    <div class="programs-divider"></div>
+
+    <div class="programs-divider"></div>
+
+    <div class="program-row" data-program="rurallabs">
+      <div class="program-title">
+        <span class="program-title-text">Tech Labs in Rural Schools</span>
+      </div>
+      <span class="program-tags">Grassroots STEM, Hardware Infrastructure</span>
+      <div class="program-hover-img">
+        <img src="img/program_rurallabs.jpg" alt="Tech Labs in Rural Schools" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ START A SKILL (SAS) PARTNERSHIP SECTION ══════════════ -->
+  <section class="sas-section" id="sas-program">
+    <div class="sas-inner">
+
+      <!-- Partnership Badge -->
+      <div class="sas-partner-badge reveal-up">
+        <span class="sas-partner-dot"></span>
+        <span>In Partnership with</span>
+        <strong>Veronica Anthony Foundation</strong>
+      </div>
+
+      <!-- Main Content Grid -->
+      <div class="sas-grid">
+        <!-- Left: Text Content -->
+        <div class="sas-content reveal-up" data-delay="0.05">
+          <div class="sas-label">FEATURED PROGRAM</div>
+          <h2 class="sas-title">
+            Start A<br>
+            <em class="sas-title-highlight">Skill</em>
+            <span class="sas-acronym"> (SAS)</span>
+          </h2>
+          <p class="sas-desc">
+            A transformative digital skills training initiative empowering African youth with the practical technology knowledge they need to thrive in today's rapidly evolving digital economy.
+          </p>
+
+          <!-- Stats Row -->
+          <div class="sas-stats-row">
+            <div class="sas-stat-item">
+              <div class="sas-stat-value" data-target="100">0</div>
+              <div class="sas-stat-suffix">+ Beneficiaries</div>
+              <div class="sas-stat-label">Cohort 1</div>
+            </div>
+            <div class="sas-stat-divider"></div>
+            <div class="sas-stat-item">
+              <div class="sas-stat-open-badge">
+                <span class="sas-open-pulse"></span>
+                OPEN
+              </div>
+              <div class="sas-stat-suffix">For Registration</div>
+              <div class="sas-stat-label">Cohort 2</div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="sas-cta-row">
+            <a href="#contact" class="sas-btn-primary">
+              <span>Register for Cohort 2</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#programs" class="sas-btn-ghost">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Right: Visual Card Stack -->
+        <div class="sas-visual reveal-up" data-delay="0.12">
+          <!-- Cohort 1 Card -->
+          <div class="sas-card sas-card-back">
+            <div class="sas-card-tag">Cohort 1 · Completed</div>
+            <div class="sas-card-stat">100<span>+</span></div>
+            <div class="sas-card-stat-label">Youth Trained</div>
+            <div class="sas-card-bar">
+              <div class="sas-card-bar-fill" style="width:100%"></div>
+            </div>
+            <div class="sas-card-skills">
+              <span>Microsoft Suite Skills</span>
+              <span>Artificial Intelligence Skills</span>
+              <span>Digital Skills</span>
+            </div>
+          </div>
+
+          <!-- Cohort 2 Card (Front) -->
+          <div class="sas-card sas-card-front">
+            <div class="sas-card-tag sas-card-tag-open">
+              <span class="sas-open-pulse"></span>
+              Cohort 2 · Open Now
+            </div>
+            <div class="sas-card-headline">Ready to level up your digital skills?</div>
+            <div class="sas-card-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Free · Open to African Youth
+            </div>
+            <div class="sas-card-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Registration Closing Soon
+            </div>
+            <a href="#contact" class="sas-card-register-btn">Register Now →</a>
+          </div>
+
+          <!-- Decorative glow orb -->
+          <div class="sas-glow-orb"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="mission-section" id="mission">
+    <div class="mission-inner">
+      <div class="mission-header">
+        <div class="mission-label reveal-up">( OUR PURPOSE &amp; DIRECTION )</div>
+        <h2 class="mission-title reveal-up">Driven by Purpose.<br><em>Built for Africa.</em></h2>
+        <p class="mission-desc reveal-up">TechRise DTI exists to transform Africa's socio-economic landscape by making digital education, technology infrastructure, and economic opportunity accessible to all.</p>
+      </div>
+
+      <div class="mv-grid">
+        <div class="mv-card mission-card reveal-up" data-delay="0.1">
+          <div class="mv-card-header">
+            <span class="mv-tag">OUR MISSION</span>
+            <div class="mv-icon-glow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+          </div>
+          <h3 class="mv-card-title">Empower Grassroots Talent &amp; Communities</h3>
+          <p class="mv-card-text">To equip Africa's youth and underserved communities with digital skills, tools, and opportunities that unlock economic empowerment and drive inclusive, community-led transformation.
+</p>
+          <div class="mv-highlights">
+            <div class="mv-highlight-item">
+              <span class="mv-dot"></span>
+              <span>Grassroots Tech Education &amp; Bootcamps</span>
+            </div>
+            <div class="mv-highlight-item">
+              <span class="mv-dot"></span>
+              <span>Job Starter Packs &amp; Hardware Deployment</span>
+            </div>
+            <div class="mv-highlight-item">
+              <span class="mv-dot"></span>
+              <span>Mentorship &amp; Sustainable Career Growth</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mv-card vision-card reveal-up" data-delay="0.2">
+          <div class="mv-card-header">
+            <span class="mv-tag vision-tag">OUR VISION</span>
+            <div class="mv-icon-glow vision-glow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
+            </div>
+          </div>
+          <h3 class="mv-card-title">A Digitally Unified &amp; Self-Sustaining Africa</h3>
+          <p class="mv-card-text">An Africa where every young person, regardless of location or circumstance, has the digital skills, tools, and opportunities to shape their own future and lead the continent's transformation.</p>
+          <div class="mv-highlights">
+            <div class="mv-highlight-item">
+              <span class="mv-dot vision-dot"></span>
+              <span>Zero-Barrier Digital Infrastructure Across Africa</span>
+            </div>
+            <div class="mv-highlight-item">
+              <span class="mv-dot vision-dot"></span>
+              <span>Gender Parity &amp; 50%+ Female STEM Leadership</span>
+            </div>
+            <div class="mv-highlight-item">
+              <span class="mv-dot vision-dot"></span>
+              <span>Pan-African Innovation &amp; Entrepreneurship Hubs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stories-section" id="stories">
+    <div class="stories-inner">
+      <div class="stories-top">
+        <div class="stories-label reveal-up">( STORIES OF CHANGE )</div>
+        <h2 class="stories-title reveal-up">From our<br><em>community</em></h2>
+      </div>
+      <div class="stories-carousel">
+        <div class="story-card active" data-index="0">
+          <div class="story-quote">"</div>
+          <p class="story-text">Being awarded the scholarship through TechRise opened up doors I never thought possible. The practical training with product design tools and modern workflows empowered me with real confidence.</p>
+          <div class="story-author">
+            <img src="img/beneficiary_binta.jpg" alt="Binta Ochalifu" class="author-avatar" />
+            <div class="author-info">
+              <strong>Binta Ochalifu</strong>
+              <span>Digital Transformation Scholar · Abuja, Nigeria</span>
+            </div>
+          </div>
+        </div>
+        <div class="story-card" data-index="1">
+          <div class="story-quote">"</div>
+          <p class="story-text">Before TechRise, I had the passion for technology but lacked the skill and structured guidance. The scholarship provided me with the opportunity and 3 months of rigorous  guidance.</p>
+          <div class="story-author">
+            <img src="img/beneficiary_alasa.jpg" alt="Alasa Great Asekomhe" class="author-avatar" />
+            <div class="author-info">
+              <strong>Alasa Great Asekomhe</strong>
+              <span>Full-Stack Developer · Nigeria</span>
+            </div>
+          </div>
+        </div>
+        <div class="story-card" data-index="2">
+          <div class="story-quote">"</div>
+          <p class="story-text">Through the UI/UX scholarship, I mastered user research, wireframing, and Figma design systems. TechRise provided the workstation support and portfolio feedback I needed to transition into product design.</p>
+          <div class="story-author">
+            <img src="img/beneficiary_etieno.jpg" alt="Etieno Usenenang" class="author-avatar" />
+            <div class="author-info">
+              <strong>Etieno Usenenang</strong>
+              <span>UI/UX &amp; Product Designer · Nigeria</span>
+            </div>
+          </div>
+        </div>
+        <div class="stories-nav">
+          <button class="story-nav-btn prev" id="story-prev" aria-label="Previous story">&#8592;</button>
+          <div class="story-dots">
+            <span class="dot active" data-dot="0"></span>
+            <span class="dot" data-dot="1"></span>
+            <span class="dot" data-dot="2"></span>
+          </div>
+          <button class="story-nav-btn next" id="story-next" aria-label="Next story">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="donate-section" id="donate">
+    <div class="donate-bg">
+      <div class="donate-glow-1"></div>
+      <div class="donate-glow-2"></div>
+    </div>
+    <div class="donate-inner">
+      <div class="donate-tag reveal-up">( SUPPORT THE MISSION )</div>
+      <h2 class="donate-title reveal-up">
+        Every contribution<br>
+        <em>rewrites a future.</em>
+      </h2>
+      <p class="donate-desc reveal-up">Your support funds laptops, internet access, mentorship programs, and community tech hubs across Africa. Together we close the digital divide.</p>
+      <div class="donate-actions reveal-up">
+        <a href="#contact" class="btn-primary">
+          <span>Donate Now</span>
+          <span class="btn-arrow">&#8599;</span>
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <span>Become a Partner</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners-section" id="partners">
+    <div class="partners-inner">
+      <div class="partners-label reveal-up">( TRUSTED BY &amp; PARTNERED WITH )</div>
+      <div class="partners-logos">
+        <div class="partner-logo reveal-up" data-delay="0.1">
+          <img src="img/DEV-design.svg" alt="DEV Design" class="partner-logo-img" />
+        </div>
+        <div class="partner-logo reveal-up" data-delay="0.2">
+          <img src="img/Tovero-logo.png" alt="Tovero" class="partner-logo-img" />
+        </div>
+        <div class="partner-logo reveal-up" data-delay="0.3">
+          <img src="img/VAF.png" alt="VAF" class="partner-logo-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left reveal-up">
+        <div class="contact-label">( GET INVOLVED )</div>
+        <h2 class="contact-title">
+          Join us in<br><em>building Africa's</em><br>digital future.
+        </h2>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="detail-label">Email</span>
+            <a href="mailto:info@techrisedti.org" class="detail-value">info@techrisedti.org</a>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">Location</span>
+            <span class="detail-value">Abuja, Nigeria · Pan-African</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right reveal-up" data-delay="0.2">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="interest">I want to</label>
+            <select id="interest" name="interest">
+              <option value="">Select your interest...</option>
+              <option value="donate">Donate</option>
+              <option value="volunteer">Volunteer</option>
+              <option value="mentor">Mentor</option>
+              <option value="partner">Corporate Partnership</option>
+              <option value="apply">Apply for a Program</option>
+              <option value="press">Press / Media Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us how you'd like to contribute..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit" id="form-submit">
+            <span>Send Message</span>
+            <span class="btn-arrow">&#8599;</span>
+          </button>
+          <div class="form-success" id="form-success">
+            <span>&#10003;</span> Thank you! We'll be in touch soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="footer-logo-img" />
+          <span class="footer-logo-text">TechRise <span class="footer-logo-accent">DTI</span></span>
+        </div>
+        <p class="footer-tagline">Driving Digital Transformation &amp; World-Class Tech Education Across Africa.</p>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-title">Contact Us</span>
+        <div class="footer-contact-items">
+          <a href="mailto:info@techrisedti.org" class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span><strong>Email:</strong> info@techrisedti.org</span>
+          </a>
+          <a href="tel:+2348122517006" class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span><strong>Phone:</strong> +234 812 251 7006</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <span>&#169; 2025 TechRise DTI. All rights reserved.</span>
+        <span>A Non-Profit Organisation · Digital Transformation Initiative</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="scholarships.html">Tech Scholarships</a>
+        <a href="webinars.html">Webinars</a>
+        <a href="index.html#contact">Get Involved</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/techrise-dti/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.89 0-1.61.72-1.61 1.61a1.61 1.61 0 0 0 1.61 1.61 1.61 1.61 0 0 0 1.61-1.61c0-.89-.72-1.61-1.61-1.61z"/></svg>
+        </a>
+        <a href="https://x.com/techRiseDTI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X (formerly Twitter)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/techriseDTI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@Techrise-dti" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

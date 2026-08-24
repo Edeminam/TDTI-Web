@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Scholarships &amp; Beneficiaries — TechRise DTI</title>
+  <meta name="description" content="Discover inspiring stories of African youth empowered through TechRise DTI tech scholarships, Start A Skill (SAS) program, and Job Starter Packs." />
+  <meta name="keywords" content="TechRise DTI Scholarships, African Tech Beneficiaries, Start A Skill, Youth Tech Empowerment, Coding Scholarships, Laptops for Youth Africa" />
+  <meta property="og:title" content="Tech Scholarships &amp; Beneficiaries — TechRise DTI" />
+  <meta property="og:description" content="Meet the beneficiaries and future builders empowered by TechRise DTI scholarships across Africa." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="scholarships-page">
+
+  <!-- Custom Magnetic Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">TechRise<span>DTI</span></div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+      <div class="loader-text">Loading Scholarship Stories...</div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" id="nav-logo-link">
+        <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="nav-logo-img" />
+        <span class="nav-logo-text">TechRise <span class="logo-accent">DTI</span></span>
+      </a>
+      <div class="nav-center">
+        <button class="nav-menu-btn" id="menu-toggle" aria-label="Toggle Menu">
+          <span class="menu-line"></span>
+          <span class="menu-label">Menu</span>
+        </button>
+      </div>
+      <a href="index.html#contact" class="nav-cta" id="nav-cta">
+        <span class="cta-dot"></span>
+        <span class="cta-text">Get Involved</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Fullscreen Navigation Menu Overlay -->
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-overlay-inner">
+      <nav class="menu-nav">
+        <a href="index.html#about" class="menu-link" data-index="01">About Us</a>
+        <a href="index.html#mission" class="menu-link" data-index="02">Mission &amp; Vision</a>
+        
+        <div class="menu-dropdown-group open" id="menu-programs-group">
+          <button class="menu-link menu-dropdown-toggle" id="menu-programs-toggle" data-index="03" aria-expanded="true">
+            <span>Programs</span>
+            <span class="menu-toggle-icon">&minus;</span>
+          </button>
+          <div class="menu-dropdown-list" id="menu-programs-list">
+            <a href="scholarships.html" class="menu-sublink active">
+              <span class="sublink-arrow">&#8594;</span>
+              <span>Tech Scholarships</span>
+            </a>
+            <a href="webinars.html" class="menu-sublink">
+              <span class="sublink-arrow">&#8594;</span>
+              <span>Literacy Workshops &amp; Webinars</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="index.html#stories" class="menu-link" data-index="04">Stories</a>
+        <a href="index.html#partners" class="menu-link" data-index="05">Partners</a>
+        <a href="index.html#contact" class="menu-link" data-index="06">Get Involved</a>
+      </nav>
+      <div class="menu-footer">
+        <div class="menu-social">
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">X</a>
+          <a href="#" class="social-link">Facebook</a>
+        </div>
+        <div class="menu-contact-info">
+          <span>info@techrisedti.org</span>
+          <span>Abuja, Nigeria · EST 2023</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <header class="scholar-hero">
+    <div class="scholar-hero-glow"></div>
+    <div class="scholar-hero-grid-pattern"></div>
+    <div class="scholar-hero-container">
+      <div class="scholar-hero-badges-row reveal-up">
+        <div class="scholar-hero-badge">
+          <span class="hero-dot"></span>
+          <span>TECHRISE DTI SCHOLARSHIPS &amp; IMPACT</span>
+        </div>
+        <div class="scholar-hero-partner-badge">
+          <span class="partner-pulse-dot"></span>
+          <span>In Strategic Partnership with <strong>Dev &amp; Design</strong></span>
+        </div>
+      </div>
+      <h1 class="scholar-hero-title reveal-up" data-delay="0.1">
+        Empowering Africa's<br>
+        <em>Next Generation of Builders</em>
+      </h1>
+      <p class="scholar-hero-desc reveal-up" data-delay="0.2">
+        In partnership with <strong>Dev &amp; Design</strong>, our scholarship programs provide fully funded digital education, laptops, data stipends, and dedicated mentorship to grassroots African youth — bridging the digital divide and creating direct pathways into global technology careers.
+      </p>
+
+      <!-- Key Stats Bar -->
+      <div class="scholar-stats-strip reveal-up" data-delay="0.3">
+        <div class="s-stat-item">
+          <span class="s-stat-num">100+</span>
+          <span class="s-stat-label">Cohort 1 Beneficiaries</span>
+        </div>
+        <div class="s-stat-divider"></div>
+        <div class="s-stat-item">
+          <span class="s-stat-num">100%</span>
+          <span class="s-stat-label">Fully Funded Tuition</span>
+        </div>
+        <div class="s-stat-divider"></div>
+        <div class="s-stat-item">
+          <span class="s-stat-num">85%+</span>
+          <span class="s-stat-label">Career Transition Rate</span>
+        </div>
+        <div class="s-stat-divider"></div>
+        <div class="s-stat-item">
+          <span class="s-stat-num">Pan-African</span>
+          <span class="s-stat-label">Youth Impact</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ COHORT 2 REGISTRATION ANNOUNCEMENT BANNER ═══════════ -->
+  <div class="scholar-banner-wrap">
+    <div class="scholar-announcement-bar">
+      <div class="scholar-bar-inner">
+        <div class="scholar-bar-left">
+          <span class="scholar-open-badge">
+            <span class="scholar-pulse"></span>
+            REGISTRATION OPEN
+          </span>
+          <div class="scholar-bar-text">
+            <strong>Start A Skill (SAS) — Cohort 2 is Now Accepting Applications</strong>
+            <span>In partnership with Veronica Anthony Foundation · Free digital skills training for African youth</span>
+          </div>
+        </div>
+        <a href="index.html#contact" class="scholar-apply-btn">
+          <span>Apply for Cohort 2</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="scholar-main-wrap">
+
+    <!-- Featured Beneficiary Spotlight Section -->
+    <section class="scholar-spotlight-section">
+      <div class="scholar-container">
+        <div class="section-top-label reveal-up">( FEATURED SCHOLAR SPOTLIGHT )</div>
+        
+        <div class="scholar-spotlight-card reveal-up" data-delay="0.1">
+          <div class="spotlight-media-col">
+            <img src="img/beneficiary_alasa.jpg" alt="Alasa Great Asekomhe" class="spotlight-avatar-img" />
+            <div class="spotlight-badge-pill">
+              <span class="spotlight-dot"></span>
+              Software Engineering
+            </div>
+          </div>
+          <div class="spotlight-info-col">
+            <div class="spotlight-top-tags">
+              <span class="spotlight-track-tag">Software Development Track</span>
+              <span class="spotlight-partner-tag">In Partnership with Dev &amp; Design</span>
+              <span class="spotlight-loc-tag">Nigeria</span>
+            </div>
+            <h2 class="spotlight-name">Alasa Great Asekomhe</h2>
+            <p class="spotlight-role">Front End Developer &amp; TechRise Scholar</p>
+            <blockquote class="spotlight-quote">
+              "Before TechRise, I had the passion for technology but lacked a capable workstation and structured guidance. The scholarship provided me with a high-performance laptop, internet support, and 6 months of rigorous coding mentorship. Today, I engineer modern web platforms and scalable applications with confidence."
+            </blockquote>
+            
+            <div class="spotlight-skills-row">
+              <span class="spotlight-skill">JavaScript</span>
+              <span class="spotlight-skill">React.js</span>
+              <span class="spotlight-skill">Node.js</span>
+              <span class="spotlight-skill">Git &amp; GitHub</span>
+            </div>
+
+            <div class="spotlight-footer-meta">
+              <div class="spotlight-meta-block">
+                <span class="meta-label">SCHOLARSHIP PROGRAM</span>
+                <span class="meta-val">Tech Scholarship · Dev &amp; Design Partnership</span>
+              </div>
+              <div class="spotlight-meta-block">
+                <span class="meta-label">CURRENT STATUS</span>
+                <span class="meta-val highlight-green">Software Engineer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficiaries Directory Gallery -->
+    <section class="scholar-gallery-section" id="beneficiaries-gallery">
+      <div class="scholar-container">
+        
+        <div class="gallery-header-row reveal-up">
+          <div>
+            <div class="section-top-label">( OUR SCHOLARS &amp; ALUMNI )</div>
+            <h2 class="gallery-section-title">Meet Our Scholarship Beneficiaries</h2>
+            <p class="gallery-section-subtitle">Real people, real transformation. Explore the journeys of young Africans who received tuition, developer laptops, and mentorship through TechRise DTI in partnership with Dev &amp; Design.</p>
+          </div>
+          <div class="gallery-count-badge" id="scholars-count-badge">
+            Showing 7 Beneficiaries
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="gallery-filter-toolbar reveal-up" data-delay="0.1">
+          <div class="filter-tabs-wrapper">
+            <button class="scholar-filter-tab active" data-category="all">All Scholars (7)</button>
+            <button class="scholar-filter-tab" data-category="software">Software Dev</button>
+            <button class="scholar-filter-tab" data-category="design">UI/UX Design</button>
+            <button class="scholar-filter-tab" data-category="data-ai">Data &amp; AI</button>
+          </div>
+
+          <div class="scholar-search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="scholar-search-input" placeholder="Search by name, skill, or location..." aria-label="Search scholars" />
+            <button class="search-clear-btn" id="scholar-search-clear" style="display:none;" aria-label="Clear search">&times;</button>
+          </div>
+        </div>
+
+        <!-- Beneficiaries Grid -->
+        <div class="scholars-grid" id="scholars-grid">
+
+          <!-- Scholar 1: Alasa Great Asekomhe -->
+          <article class="scholar-card reveal-up" data-category="software" data-scholar="alasa" data-delay="0.05">
+            <div class="scholar-card-top">
+              <div class="scholar-avatar-wrap">
+                <img src="img/beneficiary_alasa.jpg" alt="Alasa Great Asekomhe" class="scholar-avatar" />
+              </div>
+              <div class="scholar-card-headings">
+                <h3 class="scholar-name">Alasa Great Asekomhe</h3>
+                <span class="scholar-title-tag">Front End Developer</span>
+                <span class="scholar-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nigeria
+                </span>
+              </div>
+            </div>
+            <div class="scholar-card-body">
+              <p class="scholar-summary">
+                "The scholarship change the trajectory of my life and i started my tech journey with TechRise DTI and Dev and Design made it possible, and today i'm a Software Engineer"
+              </p>
+              <div class="scholar-tags-row">
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Node.js</span>
+              </div>
+            </div>
+            <div class="scholar-card-footer">
+              <span class="scholar-program-note">Tech Scholarship Recipient</span>
+              <button class="scholar-read-btn open-scholar-modal" data-scholar="alasa">
+                Read Story <span>&#8594;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Scholar 2: Binta Ochalifu -->
+          <article class="scholar-card reveal-up" data-category="design" data-scholar="binta" data-delay="0.1">
+            <div class="scholar-card-top">
+              <div class="scholar-avatar-wrap">
+                <img src="img/beneficiary_binta.jpg" alt="Binta Ochalifu" class="scholar-avatar" />
+              </div>
+              <div class="scholar-card-headings">
+                <h3 class="scholar-name">Binta Ochalifu</h3>
+                <span class="scholar-title-tag">UI/UX Designer</span>
+                <span class="scholar-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Abuja, Nigeria
+                </span>
+              </div>
+            </div>
+            <div class="scholar-card-body">
+              <p class="scholar-summary">
+                "Through TechRise DTI, I gained essential digital productivity, modern workplace tools, and problem-solving skills to excel in the digital economy."
+              </p>
+              <div class="scholar-tags-row">
+                <span>Digital Skills</span>
+                <span>Product Ops</span>
+                <span>UI Workflow</span>
+              </div>
+            </div>
+            <div class="scholar-card-footer">
+              <span class="scholar-program-note">UI/UX Scholarship Recipient</span>
+              <button class="scholar-read-btn open-scholar-modal" data-scholar="binta">
+                Read Story <span>&#8594;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Scholar 3: Etieno Usenenang -->
+          <article class="scholar-card reveal-up" data-category="design" data-scholar="etieno" data-delay="0.15">
+            <div class="scholar-card-top">
+              <div class="scholar-avatar-wrap">
+                <img src="img/beneficiary_etieno.jpg" alt="Etieno Usenenang" class="scholar-avatar" />
+              </div>
+              <div class="scholar-card-headings">
+                <h3 class="scholar-name">Etieno Usenenang</h3>
+                <span class="scholar-title-tag">UI/UX &amp; Product Designer</span>
+                <span class="scholar-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nigeria
+                </span>
+              </div>
+            </div>
+            <div class="scholar-card-body">
+              <p class="scholar-summary">
+                "Through the TechRise DTI UI/UX Scholarship, I mastered user experience research, wireframing, and Figma design systems to design user-centric digital products."
+              </p>
+              <div class="scholar-tags-row">
+                <span>Figma</span>
+                <span>UI/UX</span>
+                <span>Design Systems</span>
+              </div>
+            </div>
+            <div class="scholar-card-footer">
+              <span class="scholar-program-note">UI/UX Scholarship Recipient</span>
+              <button class="scholar-read-btn open-scholar-modal" data-scholar="etieno">
+                Read Story <span>&#8594;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Scholar 4: Adesemoye Ilerioluwa -->
+          <article class="scholar-card reveal-up" data-category="software data-ai" data-scholar="adesemoye" data-delay="0.2">
+            <div class="scholar-card-top">
+              <div class="scholar-avatar-wrap">
+                <img src="img/beneficiary_adesemoye.jpg" alt="Adesemoye Ilerioluwa" class="scholar-avatar" />
+              </div>
+              <div class="scholar-card-headings">
+                <h3 class="scholar-name">Adesemoye Ilerioluwa</h3>
+                <span class="scholar-title-tag">Software Engineering Scholar</span>
+                <span class="scholar-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nigeria
+                </span>
+              </div>
+            </div>
+            <div class="scholar-card-body">
+              <p class="scholar-summary">
+                "Having a dedicated laptop and direct mentorship through TechRise allowed me to build real-world software applications and prepare for global tech roles."
+              </p>
+              <div class="scholar-tags-row">
+                <span>Full-Stack</span>
+                <span>React</span>
+                <span>Backend APIs</span>
+              </div>
+            </div>
+            <div class="scholar-card-footer">
+              <span class="scholar-program-note">Tech Scholarship Recipient</span>
+              <button class="scholar-read-btn open-scholar-modal" data-scholar="adesemoye">
+                Read Story <span>&#8594;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Scholar 5: Nurudeen -->
+          <article class="scholar-card reveal-up" data-category="data-ai" data-scholar="nurudeen" data-delay="0.25">
+            <div class="scholar-card-top">
+              <div class="scholar-avatar-wrap">
+                <img src="img/beneficiary_nurudeen.jpg" alt="Nurudeen" class="scholar-avatar" />
+              </div>
+              <div class="scholar-card-headings">
+                <h3 class="scholar-name">Sanusi Nurudeen</h3>
+                <span class="scholar-title-tag">Data Analytics &amp; AI Scholar</span>
+                <span class="scholar-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nigeria
+                </span>
+              </div>
+            </div>
+            <div class="scholar-card-body">
+              <p class="scholar-summary">
+                "TechRise opened doors to data analytics and applied machine learning. I'm now deploying automated dashboards and analytical models for growing businesses."
+              </p>
+              <div class="scholar-tags-row">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Power BI / AI</span>
+              </div>
+            </div>
+            <div class="scholar-card-footer">
+              <span class="scholar-program-note">Data &amp; AI Scholarship Track</span>
+              <button class="scholar-read-btn open-scholar-modal" data-scholar="nurudeen">
+                Read Story <span>&#8594;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Scholar 6: Okoi -->
+          <article class="scholar-card reveal-up" data-category="software" data-scholar="okoi" data-delay="0.3">
+            <div class="scholar-card-top">
+              <div class="scholar-avatar-wrap">
+                <img src="img/beneficiary_okoi.jpg" alt="Okoi" class="scholar-avatar" />
+              </div>
+              <div class="scholar-card-headings">
+                <h3 class="scholar-name">Okoi Okoi Otu</h3>
+                <span class="scholar-title-tag">Front End Developer</span>
+                <span class="scholar-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nigeria
+                </span>
+              </div>
+            </div>
+            <div class="scholar-card-body">
+              <p class="scholar-summary">
+                "Transitioned from zero tech background to building web applications and empowering peers in my local community with digital skills."
+              </p>
+              <div class="scholar-tags-row">
+                <span>Front-End</span>
+                <span>Web Dev</span>
+                <span>React</span>
+              </div>
+            </div>
+            <div class="scholar-card-footer">
+              <span class="scholar-program-note">Front End Development Scholarship</span>
+              <button class="scholar-read-btn open-scholar-modal" data-scholar="okoi">
+                Read Story <span>&#8594;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Scholar 7: Happiness -->
+          <article class="scholar-card reveal-up" data-category="design" data-scholar="happiness" data-delay="0.35">
+            <div class="scholar-card-top">
+              <div class="scholar-avatar-wrap">
+                <img src="img/beneficiary_happiness.jpg" alt="Happiness Emmanuel" class="scholar-avatar" />
+              </div>
+              <div class="scholar-card-headings">
+                <h3 class="scholar-name">Happiness Emmanuel</h3>
+                <span class="scholar-title-tag">UI/UX Design Scholar</span>
+                <span class="scholar-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nigeria
+                </span>
+              </div>
+            </div>
+            <div class="scholar-card-body">
+              <p class="scholar-summary">
+                "The scholarship removed financial barriers and equipped me with high-demand digital productivity and administrative technology skills."
+              </p>
+              <div class="scholar-tags-row">
+                <span>Figma</span>
+                <span>UI Design</span>
+                <span>UX Research</span>
+              </div>
+            </div>
+            <div class="scholar-card-footer">
+              <span class="scholar-program-note">Start A Skill &amp; Women in Tech</span>
+              <button class="scholar-read-btn open-scholar-modal" data-scholar="happiness">
+                Read Story <span>&#8594;</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- No Results Fallback -->
+        <div class="scholar-no-results" id="scholar-no-results" style="display: none;">
+          <div class="no-results-icon">&#128269;</div>
+          <h4>No scholars match your search</h4>
+          <p>Try searching for different keywords or reset your filters.</p>
+          <button class="btn-secondary" id="scholar-reset-btn">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Scholarship Programs Tracks -->
+    <section class="scholar-programs-overview">
+      <div class="scholar-container">
+        <div class="section-top-label reveal-up">( SCHOLARSHIP PATHWAYS )</div>
+        <h2 class="overview-title reveal-up">How Our Scholarships Work</h2>
+        <p class="overview-desc reveal-up">We eliminate financial barriers so Africa's most promising minds can focus on mastering high-demand skills.</p>
+
+        <div class="overview-grid reveal-up" data-delay="0.1">
+          <!-- Pillar 1 -->
+          <div class="overview-card">
+            <div class="overview-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="overview-partner-pill">In Partnership with Dev &amp; Design</div>
+            <h3 class="overview-card-title">Tech Scholarships</h3>
+            <p class="overview-card-text">Organised in partnership with Dev &amp; Design. Full tech-stack tuition coupled with training and mentorship.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="overview-card">
+            <div class="overview-icon-box icon-green">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="overview-partner-pill">In Partnership with VAF</div>
+            <h3 class="overview-card-title">Start A Skill (SAS) Program</h3>
+            <p class="overview-card-text">Organised in partnership with Veronica Anthony Foundation. Focused on equipping African youth with foundational and intermediate digital literacy &amp; AI tools.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="overview-card">
+            <div class="overview-icon-box icon-amber">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="overview-partner-pill">Community &amp; Industry Tracks</div>
+            <h3 class="overview-card-title">Women in Tech / SheLeads</h3>
+            <p class="overview-card-text">Dedicated scholarship cohort supporting women and girls in STEM with female tech leadership mentorship, portfolio reviews, and career placement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Scholarship Partners Showcase -->
+    <section class="scholar-partners-section">
+      <div class="scholar-container">
+        <div class="section-top-label reveal-up" style="text-align: center;">( STRATEGIC SCHOLARSHIP PARTNERS )</div>
+        <h2 class="overview-title reveal-up" style="text-align: center; margin-bottom: 2.5rem;">Partnering to Accelerate African Tech Talent</h2>
+        
+        <div class="scholar-partners-grid reveal-up" data-delay="0.1">
+          <div class="scholar-partner-card featured-partner">
+            <div class="scholar-partner-logo-box">
+              <img src="img/DEV-design.svg" alt="Dev & Design" class="scholar-partner-logo-img" />
+            </div>
+            <div class="scholar-partner-info">
+              <div class="partner-role-pill">Primary Scholarship Partner</div>
+              <h4 class="partner-org-name">Dev &amp; Design</h4>
+              <p class="partner-org-desc">Co-sponsoring technical software engineering scholarships, developer workstations, and intensive coding mentorship for high-potential African builders.</p>
+            </div>
+          </div>
+
+          <div class="scholar-partner-card">
+            <div class="scholar-partner-logo-box">
+              <img src="img/VAF.png" alt="Veronica Anthony Foundation" class="scholar-partner-logo-img" />
+            </div>
+            <div class="scholar-partner-info">
+              <div class="partner-role-pill">Start A Skill (SAS) Partner</div>
+              <h4 class="partner-org-name">Veronica Anthony Foundation</h4>
+              <p class="partner-org-desc">Championing grassroots digital skills, digital productivity, and career acceleration for youths across Nigerian communities.</p>
+            </div>
+          </div>
+
+          <div class="scholar-partner-card">
+            <div class="scholar-partner-logo-box">
+              <img src="img/Tovero-logo.png" alt="Tovero" class="scholar-partner-logo-img" />
+            </div>
+            <div class="scholar-partner-info">
+              <div class="partner-role-pill">Ecosystem Partner</div>
+              <h4 class="partner-org-name">Tovero Energy</h4>
+              <p class="partner-org-desc">Collaborating to expand tech accessibility, community resources, and digital transformation for African innovators.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsor / Apply CTA Section -->
+    <section class="scholar-cta-section">
+      <div class="scholar-container">
+        <div class="scholar-cta-box reveal-up">
+          <div class="scholar-cta-content">
+            <div class="cta-mini-tag">( GET INVOLVED )</div>
+            <h3 class="scholar-cta-title">Want to sponsor a scholar or apply for the next cohort?</h3>
+            <p class="scholar-cta-desc">
+              Whether you are an aspiring African youth ready to launch your tech career or an organisation passionate about sponsoring hardware and tuition, let's build the future together.
+            </p>
+            <div class="scholar-cta-actions">
+              <a href="index.html#contact" class="btn-primary">
+                <span>Apply for Scholarship / Cohort 2</span>
+                <span class="btn-arrow">&#8599;</span>
+              </a>
+              <a href="mailto:info@techrisedti.org" class="btn-secondary">
+                <span>Sponsor a Scholar / Donate Laptops</span>
+              </a>
+            </div>
+          </div>
+          <div class="scholar-cta-glow"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ SCHOLAR DETAIL POPUP MODAL ═══════════════════════════ -->
+  <div class="scholar-modal-backdrop" id="scholar-modal-backdrop">
+    <div class="scholar-modal-dialog">
+      <button class="scholar-modal-close" id="scholar-modal-close" aria-label="Close modal">&times;</button>
+      
+      <div class="scholar-modal-content">
+        <div class="modal-scholar-header">
+          <img src="img/beneficiary_alasa.jpg" alt="Scholar Portrait" class="modal-scholar-avatar" id="modal-scholar-avatar" />
+          <div class="modal-scholar-intro">
+            <span class="modal-scholar-badge" id="modal-scholar-badge">Cohort 1 Graduate</span>
+            <h3 class="modal-scholar-name" id="modal-scholar-name">Alasa Great Asekomhe</h3>
+            <p class="modal-scholar-role" id="modal-scholar-role">Full-Stack Developer</p>
+            <span class="modal-scholar-location" id="modal-scholar-location">Nigeria</span>
+          </div>
+        </div>
+
+        <div class="modal-scholar-body">
+          <h4 class="modal-body-heading">Impact &amp; Transformation Story</h4>
+          <blockquote class="modal-scholar-quote" id="modal-scholar-quote">
+            "Before TechRise, I had the passion but lacked a computer and structured guidance."
+          </blockquote>
+          
+          <div class="modal-details-grid">
+            <div class="modal-detail-item">
+              <span class="detail-label">Scholarship Track</span>
+              <span class="detail-val" id="modal-scholar-track">Software Engineering &amp; Job Starter Pack</span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="detail-label">Career Outcome</span>
+              <span class="detail-val highlight-green" id="modal-scholar-outcome">Employed in Tech &#10003;</span>
+            </div>
+          </div>
+
+          <div class="modal-skills-section">
+            <span class="detail-label">Skills &amp; Technologies Mastered</span>
+            <div class="modal-skills-list" id="modal-scholar-skills">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>TypeScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="footer-logo-img" />
+          <span class="footer-logo-text">TechRise <span class="footer-logo-accent">DTI</span></span>
+        </div>
+        <p class="footer-tagline">Driving Digital Transformation &amp; World-Class Tech Education Across Africa.</p>
+      </div>
+      <div class="footer-contact">
+        <span class="footer-contact-title">Contact Us</span>
+        <div class="footer-contact-items">
+          <a href="mailto:info@techrisedti.org" class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span><strong>Email:</strong> info@techrisedti.org</span>
+          </a>
+          <a href="tel:+2348122517006" class="footer-contact-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span><strong>Phone:</strong> +234 812 251 7006</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <span>&#169; 2025 TechRise DTI. All rights reserved.</span>
+        <span>A Non-Profit Organisation · Digital Transformation Initiative</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="scholarships.html">Tech Scholarships</a>
+        <a href="webinars.html">Webinars</a>
+        <a href="index.html#contact">Get Involved</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/techrise-dti/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.89 0-1.61.72-1.61 1.61a1.61 1.61 0 0 0 1.61 1.61 1.61 1.61 0 0 0 1.61-1.61c0-.89-.72-1.61-1.61-1.61z"/></svg>
+        </a>
+        <a href="https://x.com/techRiseDTI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X (formerly Twitter)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/techriseDTI" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@Techrise-dti" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
