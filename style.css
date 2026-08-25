@@ -2159,13 +2159,6 @@ a.program-row-link:hover .program-row-badge {
   .sas-stat-divider {
     display: none;
   }
-  .sas-visual {
-    height: 320px;
-  }
-  .sas-card {
-    width: 230px;
-    padding: 1.1rem;
-  }
 }
 
 /* ── CONTACT SECTION ────────────────────────────────────── */
@@ -5337,8 +5330,7 @@ html, body {
     gap: 1.25rem;
   }
   .sas-stat-divider { display: none; }
-  .sas-visual { height: 320px; }
-  .sas-card { width: 230px; padding: 1.1rem; }
+  .sas-visual { display: none !important; }
   .sas-cta-row { flex-direction: column; align-items: stretch; }
   .sas-btn-primary, .sas-btn-ghost { justify-content: center; }
 
@@ -5522,8 +5514,6 @@ html, body {
   /* --- SAS --- */
   .sas-section { padding: 3rem 1rem; }
   .sas-title { font-size: clamp(2.2rem, 13vw, 4rem); }
-  .sas-visual { height: 280px; }
-  .sas-glow-orb { width: 200px; height: 200px; }
 
   /* --- Contact --- */
   .contact-section { padding: 3rem 1rem; }
