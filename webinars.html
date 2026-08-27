@@ -134,35 +134,6 @@
     </div>
   </header>
 
-  <!-- ══ UPCOMING WEBINAR ANNOUNCEMENT BANNER ═════════════ -->
-  <div class="upcoming-webinar-bar" id="upcoming-webinar">
-    <div class="upcoming-webinar-inner">
-      <div class="upcoming-bar-left">
-        <span class="upcoming-live-badge">
-          <span class="upcoming-pulse"></span>
-          UPCOMING
-        </span>
-        <div class="upcoming-bar-text">
-          <span class="upcoming-bar-title">The AI Advantage: Who Will Benefit Most from Artificial Intelligence?</span>
-          <span class="upcoming-bar-meta">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Thursday, 27 August 2026
-            <span class="upcoming-bar-dot">·</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Live Webinar
-          </span>
-        </div>
-      </div>
-      <a href="https://forms.gle/xvCcqG6zfgRPTnKdA" target="_blank" rel="noopener" class="upcoming-register-btn">
-        Register Free
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <button class="upcoming-bar-close" id="close-upcoming-bar" aria-label="Close announcement">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-  </div>
-
   <!-- Main Content Area -->
   <main class="webinars-main-wrap">
 
@@ -248,11 +219,11 @@
         <div class="filter-tabs-wrapper reveal-up" data-delay="0.1">
           <button class="filter-tab active" data-category="all">
             <span>All Videos</span>
-            <span class="tab-badge">7</span>
+            <span class="tab-badge">8</span>
           </button>
           <button class="filter-tab" data-category="career">
             <span>Career &amp; Tech Path</span>
-            <span class="tab-badge">3</span>
+            <span class="tab-badge">4</span>
           </button>
           <button class="filter-tab" data-category="design">
             <span>UI/UX &amp; Design</span>
@@ -264,11 +235,49 @@
           </button>
         </div>
 
-        <!-- Video Grid: All 7 Real TechRise YouTube Videos -->
+        <!-- Video Grid: All 8 Real TechRise YouTube Videos -->
         <div class="webinars-video-grid" id="webinars-grid">
 
-          <!-- Video 1: Reinventing Yourself for a Digital Future -->
-          <article class="webinar-card reveal-up" data-category="career" data-video="reinvent-future" data-delay="0.05">
+          <!-- Video 1: The AI Advantage -->
+          <article class="webinar-card reveal-up" data-category="career" data-video="ai-advantage" data-delay="0.05">
+            <div class="card-thumb-wrap">
+              <img src="img/thumb_ai_advantage.jpg" alt="THE AI ADVANTAGE - Who Will Benefit Most From Artificial Intelligence?" class="card-thumb" />
+              <div class="card-thumb-overlay"></div>
+              <button class="card-play-btn open-modal-btn" data-video="ai-advantage" aria-label="Play The AI Advantage">
+                <span class="card-play-icon">&#9658;</span>
+              </button>
+              <span class="card-duration">YouTube</span>
+              <span class="card-level level-beg">Webinar Recording</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-cat-badge">Artificial Intelligence</span>
+                <span class="card-views">&#9658; TechRise Webinar</span>
+              </div>
+              <h4 class="card-title">THE AI ADVANTAGE - Who Will Benefit Most From Artificial Intelligence?</h4>
+              <p class="card-summary">
+                A transformative session exploring the real-world impact of Artificial Intelligence — who stands to gain the most, how African youth can leverage AI as a tool for economic advancement, and what skills matter in an AI-powered world.
+              </p>
+              <div class="card-speaker-meta">
+                <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="card-speaker-avatar" />
+                <div class="card-speaker-text">
+                  <strong>TechRise DTI</strong>
+                  <span>Webinar Series</span>
+                </div>
+              </div>
+              <div class="card-action-bar">
+                <button class="card-watch-btn open-modal-btn" data-video="ai-advantage">
+                  Watch Video <span>&#9658;</span>
+                </button>
+                <a href="https://www.youtube.com/watch?v=XzXXCWhyRro" target="_blank" rel="noopener noreferrer" class="card-slides-btn">
+                  YouTube &#8599;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video 2: Reinventing Yourself for a Digital Future -->
+          <article class="webinar-card reveal-up" data-category="career" data-video="reinvent-future" data-delay="0.08">
             <div class="card-thumb-wrap">
               <img src="img/thumb_reinvent_future.jpg" alt="Reinventing Yourself for a Digital Future" class="card-thumb" />
               <div class="card-thumb-overlay"></div>
@@ -575,10 +584,10 @@
             <p class="upcoming-item-meta">Live Webinar · Thursday, 27 August 2026 · Free for all participants</p>
           </div>
           <div class="upcoming-action">
-            <a href="https://forms.gle/xvCcqG6zfgRPTnKdA" target="_blank" rel="noopener" class="btn-primary rsvp-btn">
-              <span>Register Free</span>
-              <span class="btn-arrow">&#8599;</span>
-            </a>
+            <button class="btn-primary open-modal-btn" data-video="ai-advantage">
+              <span>Watch Video</span>
+              <span class="btn-arrow">&#9658;</span>
+            </button>
           </div>
         </div>
 
@@ -673,12 +682,6 @@
 
       </div>
     </div>
-  </div>
-
-  <!-- RSVP Confirmation Toast -->
-  <div class="toast-notification" id="toast">
-    <span class="toast-icon">&#10003;</span>
-    <div class="toast-text" id="toast-text">Registration confirmed! We've sent the session link to your email.</div>
   </div>
 
   <!-- Footer -->

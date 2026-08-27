@@ -2396,7 +2396,12 @@ a.detail-value:hover { color: var(--accent-cyan); }
 }
 
 @media (max-width: 768px) {
-  .hero-headline { font-size: clamp(1.5rem, 7.5vw, 3rem); letter-spacing: -0.03em; }
+  .hero-headline {
+    font-size: clamp(2.3rem, 9.5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+  }
   .hero-footer { grid-template-columns: 1fr; gap: 1.5rem; }
   .hero-footer-right { align-items: flex-start; }
 
@@ -5284,7 +5289,14 @@ html, body {
   .nav-menu-btn { cursor: pointer; padding-right: 0; }
 
   /* --- Hero --- */
-  .hero-headline { font-size: clamp(1.5rem, 7.5vw, 3rem); letter-spacing: -0.03em; }
+  .hero-headline {
+    font-size: clamp(2.4rem, 9vw, 4.2rem);
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+  }
+  .headline-line { font-weight: 900; }
+  .headline-accent { font-weight: 900; }
   .headline-img-wrap { width: clamp(80px, 18vw, 160px); }
   .hero-footer {
     grid-template-columns: 1fr;
@@ -5293,7 +5305,7 @@ html, body {
   }
   .hero-footer-right { display: none; }
   .hero-services { flex-direction: column; gap: 0.5rem; }
-  .hero-content { padding-top: 90px; }
+  .hero-content { padding-top: 85px; }
 
   /* --- Marquee --- */
   .marquee-content span { padding: 0 0.75rem; }
@@ -5433,7 +5445,11 @@ html, body {
    ──────────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
   /* --- Hero --- */
-  .hero-headline { font-size: clamp(1.5rem, 7.5vw, 3rem); }
+  .hero-headline {
+    font-size: clamp(2.2rem, 9.5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 0.96;
+  }
   .headline-img-wrap { display: none; }
   .hero-tag { font-size: 0.68rem; }
   .hero-scroll-hint { display: none; }
@@ -5498,9 +5514,14 @@ html, body {
   .menu-label { font-size: 0.78rem; }
 
   /* --- Hero --- */
-  .hero-content { padding-top: 80px; padding-left: 1rem; padding-right: 1rem; }
-  .hero-headline { font-size: clamp(1.4rem, 7vw, 2.5rem); letter-spacing: -0.03em; }
-  .hero-tag { font-size: 0.62rem; padding: 0.3rem 0.75rem; }
+  .hero-content { padding-top: 75px; padding-left: 1rem; padding-right: 1rem; }
+  .hero-headline {
+    font-size: clamp(2.1rem, 10vw, 3.2rem);
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+  }
+  .hero-tag { font-size: 0.65rem; padding: 0.3rem 0.75rem; margin-bottom: 1.5rem; }
   .hero-footer { padding: 1rem; }
 
   /* --- Marquee --- */
@@ -5594,7 +5615,11 @@ html, body {
    ≤ 380px  —  Very small phones (SE, Galaxy A-series)
    ──────────────────────────────────────────────────────────── */
 @media (max-width: 380px) {
-  .hero-headline { font-size: clamp(1.3rem, 7vw, 2.2rem); }
+  .hero-headline {
+    font-size: clamp(1.85rem, 10.5vw, 2.5rem);
+    font-weight: 900;
+    line-height: 0.96;
+  }
   .hero-tag { display: none; }
   .hw-title { font-size: 1.6rem; }
   .sas-title { font-size: clamp(1.8rem, 14vw, 3rem); }

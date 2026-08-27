@@ -17,15 +17,6 @@ window.addEventListener('load', () => {
   }, 2200);
 });
 
-/* ── UPCOMING WEBINAR BAR DISMISS ────────────────────────── */
-const closeUpcomingBar = document.getElementById('close-upcoming-bar');
-if (closeUpcomingBar) {
-  closeUpcomingBar.addEventListener('click', () => {
-    const bar = document.getElementById('upcoming-webinar');
-    if (bar) bar.classList.add('dismissed');
-  });
-}
-
 /* ── CUSTOM CURSOR ───────────────────────────────────────── */
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursor-follower');
@@ -437,6 +428,18 @@ if (heroMapWrapper) {
    ============================================================ */
 
 const webinarData = {
+  'ai-advantage': {
+    youtubeId: 'XzXXCWhyRro',
+    title: 'THE AI ADVANTAGE - Who Will Benefit Most From Artificial Intelligence?',
+    category: 'Artificial Intelligence',
+    duration: 'YouTube Full Webinar',
+    speaker: 'TechRise DTI',
+    role: 'Webinar Series & Mentorship',
+    avatar: 'img/Techrise icon logo.png',
+    poster: 'img/thumb_ai_advantage.jpg',
+    description: 'A transformative session exploring the real-world impact of Artificial Intelligence — who stands to gain the most, how African youth can leverage AI as a tool for economic advancement, and what skills matter in an AI-powered world.',
+    resource: 'TechRise AI & Future Skills Guide'
+  },
   'reinvent-future': {
     youtubeId: 'edQm-xG6qok',
     title: 'TECHRISE DTI WEBINAR: Reinventing Yourself for a Digital Future: A Beginner Perspective',
@@ -693,34 +696,6 @@ document.querySelectorAll('.modal-tab-btn').forEach(btn => {
     btn.classList.add('active');
     const target = document.getElementById(`tab-${btn.dataset.tab}`);
     if (target) target.classList.add('active');
-  });
-});
-
-/* ── TOAST NOTIFICATIONS & RSVP / DOWNLOADS ──────────────── */
-const toast = document.getElementById('toast');
-const toastText = document.getElementById('toast-text');
-let toastTimeout = null;
-
-function showToast(message) {
-  if (!toast) return;
-  if (toastText) toastText.textContent = message;
-  toast.classList.add('active');
-  if (toastTimeout) clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(() => {
-    toast.classList.remove('active');
-  }, 4000);
-}
-
-document.querySelectorAll('.rsvp-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const session = btn.dataset.session || 'Live Webinar';
-    btn.disabled = true;
-    btn.querySelector('span').textContent = 'Seat Reserved ✓';
-    showToast(`✓ Free seat reserved for "${session}"! We'll send you an invitation.`);
-    setTimeout(() => {
-      btn.disabled = false;
-      btn.querySelector('span').textContent = 'Reserve Free Seat';
-    }, 4000);
   });
 });
 
