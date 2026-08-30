@@ -557,7 +557,7 @@
   </main>
 
   <!-- Upcoming Live Masterclasses Schedule -->
-  <section class="upcoming-webinars-section">
+  <section class="upcoming-webinars-section" id="upcoming-sessions">
     <div class="webinars-inner-container">
       <div class="section-top-label reveal-up">( LIVE SESSIONS &amp; COMMUNITY )</div>
       <div class="upcoming-header-row reveal-up">
@@ -565,27 +565,30 @@
           <h2 class="upcoming-title">Upcoming Live Interactive Webinars</h2>
           <p class="upcoming-subtitle">Participate live with our mentors, ask questions in real time, and join our Discord/Telegram learning groups.</p>
         </div>
-        <div class="live-dot-indicator">
-          <span class="pulse-dot"></span> Next Live: Thu, 27 August 2026
+        <div class="live-dot-indicator live-ended-indicator">
+          <span class="ended-dot"></span> Session Ended
         </div>
       </div>
 
       <div class="upcoming-list reveal-up" data-delay="0.1">
 
-        <!-- ★ FEATURED UPCOMING: The AI Advantage — Aug 27 -->
-        <div class="upcoming-item upcoming-item-featured">
-          <div class="upcoming-date-box upcoming-date-box-hot">
+        <!-- The AI Advantage — Session Ended -->
+        <div class="upcoming-item upcoming-item-ended">
+          <div class="upcoming-date-box upcoming-date-box-ended">
             <span class="date-day">27</span>
             <span class="date-month">AUG</span>
           </div>
           <div class="upcoming-info">
-            <span class="upcoming-tag">Artificial Intelligence</span>
+            <div class="upcoming-tag-wrapper">
+              <span class="upcoming-tag">Artificial Intelligence</span>
+              <span class="session-ended-badge">Session Ended</span>
+            </div>
             <h4 class="upcoming-item-title">The AI Advantage: Who Will Benefit Most from Artificial Intelligence?</h4>
-            <p class="upcoming-item-meta">Live Webinar · Thursday, 27 August 2026 · Free for all participants</p>
+            <p class="upcoming-item-meta">Live Webinar · Thursday, 27 August 2026 · Session Ended (Recording Available)</p>
           </div>
           <div class="upcoming-action">
-            <button class="btn-primary open-modal-btn" data-video="ai-advantage">
-              <span>Watch Video</span>
+            <button class="btn-primary open-modal-btn" data-video="ai-advantage" aria-label="Watch The AI Advantage Recording">
+              <span>Watch Recording</span>
               <span class="btn-arrow">&#9658;</span>
             </button>
           </div>

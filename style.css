@@ -3511,6 +3511,63 @@ a.detail-value:hover { color: var(--accent-cyan); }
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* Session Ended State for Upcoming Section */
+.live-ended-indicator {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #f87171;
+}
+.ended-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+.upcoming-item-ended {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(13, 21, 38, 0.6);
+}
+.upcoming-item-ended:hover {
+  border-color: rgba(1, 49, 243, 0.5);
+  background: rgba(13, 21, 38, 0.85);
+  transform: translateX(6px);
+}
+.upcoming-date-box-ended {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.upcoming-date-box-ended .date-day {
+  color: #cbd5e1;
+}
+.upcoming-date-box-ended .date-month {
+  color: #94a3b8;
+}
+.session-ended-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.18rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.upcoming-tag-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+.upcoming-tag-wrapper .upcoming-tag {
+  margin-bottom: 0;
+}
+
 /* Host Webinar Callout */
 .host-webinar-section {
   padding: 5rem 0 3rem;
@@ -5484,6 +5541,16 @@ html, body {
   }
   .date-day { font-size: 1.2rem; }
   .date-month { margin-top: 0; margin-left: 0.2rem; font-size: 0.72rem; }
+  .upcoming-action-group {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .upcoming-action-group .btn-primary,
+  .upcoming-action-group .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
 
   /* ─── SCHOLARSHIPS ─── */
   .scholars-grid { grid-template-columns: 1fr; }
