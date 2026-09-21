@@ -14,16 +14,19 @@ window.addEventListener('load', () => {
       initSASCounter();
       animateHeroIn();
     }
-  }, 2200);
+  }, 400);
 });
 
 /* ── CUSTOM CURSOR ───────────────────────────────────────── */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+if (hasFinePointer) document.documentElement.classList.add('fine-pointer');
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursor-follower');
 let mouseX = 0, mouseY = 0;
 let followerX = 0, followerY = 0;
 
-document.addEventListener('mousemove', (e) => {
+hasFinePointer && document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
   if (cursor) {
@@ -32,7 +35,7 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
-(function animateFollower() {
+hasFinePointer && (function animateFollower() {
   followerX += (mouseX - followerX) * 0.1;
   followerY += (mouseY - followerY) * 0.1;
   if (follower) {
@@ -127,43 +130,15 @@ if (menuProgramsToggle && menuProgramsGroup) {
   });
 }
 
-const navProgramsDropdown = document.getElementById('nav-programs-dropdown');
-const programsDropdownTrigger = document.getElementById('programs-dropdown-trigger');
-if (programsDropdownTrigger && navProgramsDropdown) {
-  programsDropdownTrigger.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isOpen = navProgramsDropdown.classList.toggle('open');
-    programsDropdownTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!navProgramsDropdown.contains(e.target)) {
-      navProgramsDropdown.classList.remove('open');
-      programsDropdownTrigger.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  navProgramsDropdown.querySelectorAll('.dropdown-item').forEach(item => {
-    item.addEventListener('click', () => {
-      navProgramsDropdown.classList.remove('open');
-      programsDropdownTrigger.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeMenu();
-    if (navProgramsDropdown) {
-      navProgramsDropdown.classList.remove('open');
-      if (programsDropdownTrigger) programsDropdownTrigger.setAttribute('aria-expanded', 'false');
-    }
   }
 });
 
 /* ── PARTICLE CANVAS ─────────────────────────────────────── */
 const canvas = document.getElementById('hero-particles');
-if (canvas) {
+if (canvas && !prefersReducedMotion) {
   const ctx = canvas.getContext('2d');
   let particles = [];
   let animId;
@@ -350,7 +325,9 @@ dots.forEach(dot => {
 });
 
 /* Auto-advance stories */
-setInterval(() => showStory(currentStory + 1), 6000);
+if (cards.length > 1 && !prefersReducedMotion) {
+  setInterval(() => showStory(currentStory + 1), 6000);
+}
 
 /* ── DONATE AMOUNT CHIPS ─────────────────────────────────── */
 document.querySelectorAll('.amount-chip').forEach(chip => {
@@ -361,25 +338,74 @@ document.querySelectorAll('.amount-chip').forEach(chip => {
 });
 
 /* ── CONTACT FORM ────────────────────────────────────────── */
+/* EmailJS (https://www.emailjs.com) — these three values are PUBLIC identifiers
+   by design (not secrets). Create a service + template in the EmailJS dashboard,
+   restrict allowed domains there, then paste the IDs below.
+   Template variables used: from_name, from_email, interest, message. */
+const EMAILJS_CONFIG = {
+  serviceId:  'YOUR_EMAILJS_SERVICE_ID',
+  templateId: 'YOUR_EMAILJS_TEMPLATE_ID',
+  publicKey:  'YOUR_EMAILJS_PUBLIC_KEY'
+};
+const CONTACT_FALLBACK_EMAIL = 'info@techrisedti.org';
+
 const form    = document.getElementById('contact-form');
 const success = document.getElementById('form-success');
+const formError = document.getElementById('form-error');
 
-form && form.addEventListener('submit', (e) => {
+function showFormMessage(el, text) {
+  if (!el) return;
+  if (text) el.textContent = text;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 8000);
+}
+
+form && form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = document.getElementById('form-submit');
-  if (btn) {
-    btn.querySelector('span').textContent = 'Sending...';
-    btn.disabled = true;
+  const label = btn && btn.querySelector('span');
+  success && success.classList.remove('show');
+  formError && formError.classList.remove('show');
+
+  const data = new FormData(form);
+  if (data.get('website')) return; // honeypot: bots fill this hidden field
+
+  const name = (data.get('name') || '').toString().trim();
+  const email = (data.get('email') || '').toString().trim();
+  const message = (data.get('message') || '').toString().trim();
+  const interest = (data.get('interest') || '').toString();
+
+  const nameEl = form.querySelector('#name');
+  const emailEl = form.querySelector('#email');
+  if (!name) { showFormMessage(formError, 'Please enter your name.'); nameEl && nameEl.focus(); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showFormMessage(formError, 'Please enter a valid email address.'); emailEl && emailEl.focus(); return; }
+
+  const configured = !Object.values(EMAILJS_CONFIG).some(v => v.startsWith('YOUR_'));
+  if (!configured) {
+    showFormMessage(formError, 'Our contact form is being set up. Please email us at ' + CONTACT_FALLBACK_EMAIL + '.');
+    return;
   }
-  setTimeout(() => {
+
+  if (btn) { btn.disabled = true; if (label) label.textContent = 'Sending...'; }
+  try {
+    const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        service_id: EMAILJS_CONFIG.serviceId,
+        template_id: EMAILJS_CONFIG.templateId,
+        user_id: EMAILJS_CONFIG.publicKey,
+        template_params: { from_name: name, from_email: email, interest: interest || 'Not specified', message: message || '(no message)' }
+      })
+    });
+    if (!res.ok) throw new Error('EmailJS responded ' + res.status);
     form.reset();
-    if (success) success.classList.add('show');
-    if (btn) {
-      btn.querySelector('span').textContent = 'Send Message';
-      btn.disabled = false;
-    }
-    setTimeout(() => success && success.classList.remove('show'), 5000);
-  }, 1500);
+    showFormMessage(success);
+  } catch (err) {
+    showFormMessage(formError, 'Sorry, your message could not be sent. Please email us at ' + CONTACT_FALLBACK_EMAIL + '.');
+  } finally {
+    if (btn) { btn.disabled = false; if (label) label.textContent = 'Send Message'; }
+  }
 });
 
 /* ── SMOOTH SCROLL FOR ANCHOR LINKS ──────────────────────── */
@@ -436,7 +462,7 @@ const webinarData = {
     speaker: 'TechRise DTI',
     role: 'Webinar Series & Mentorship',
     avatar: 'img/Techrise icon logo.png',
-    poster: 'img/thumb_ai_advantage.jpg',
+    poster: 'img/thumb_ai_advantage.webp',
     description: 'A transformative session exploring the real-world impact of Artificial Intelligence — who stands to gain the most, how African youth can leverage AI as a tool for economic advancement, and what skills matter in an AI-powered world.',
     resource: 'TechRise AI & Future Skills Guide'
   },
@@ -448,7 +474,7 @@ const webinarData = {
     speaker: 'TechRise DTI',
     role: 'Webinar Series & Mentorship',
     avatar: 'img/Techrise icon logo.png',
-    poster: 'img/thumb_reinvent_future.jpg',
+    poster: 'img/thumb_reinvent_future.webp',
     description: 'A transformative webinar exploring how beginners from any background can pivot into the digital economy, develop in-demand tech skills, and position themselves for high-growth global opportunities.',
     resource: 'TechRise Digital Career Starter Guide'
   },
@@ -460,7 +486,7 @@ const webinarData = {
     speaker: 'TechRise DTI',
     role: 'Tech Career Mentors',
     avatar: 'img/Techrise icon logo.png',
-    poster: 'img/thumb_tech_path.jpg',
+    poster: 'img/thumb_tech_path.webp',
     description: 'Learn how to navigate the vast tech ecosystem, discover whether Software Engineering, Product Design, Data, or Cloud fits your natural strengths, and build a structured roadmap from initial curiosity to your first tech job.',
     resource: 'Tech Career Roadmap Checklist'
   },
@@ -472,7 +498,7 @@ const webinarData = {
     speaker: 'TechRise DTI',
     role: 'Design Academy Mentors',
     avatar: 'img/Techrise icon logo.png',
-    poster: 'img/thumb_uiux_masterclass.jpg',
+    poster: 'img/thumb_uiux_masterclass.webp',
     description: 'An in-depth masterclass breaking down the core principles of User Interface (UI) and User Experience (UX) design, wireframing, Figma workflows, user research, and creating high-converting digital products.',
     resource: 'UI/UX Design Starter Kit & Wireframe Templates'
   },
@@ -484,7 +510,7 @@ const webinarData = {
     speaker: 'TechRise DTI',
     role: 'Skills Development Lead',
     avatar: 'img/Techrise icon logo.png',
-    poster: 'img/thumb_design_code_create.jpg',
+    poster: 'img/thumb_design_code_create.webp',
     description: 'Bridging the gap between visual design and software coding. Discover the essential tools, workflows, and mindset required to turn creative ideas into functional digital applications.',
     resource: 'Design to Code Workflow Guide'
   },
@@ -496,7 +522,7 @@ const webinarData = {
     speaker: 'TechRise DTI',
     role: 'Career Mentorship Series',
     avatar: 'img/Techrise icon logo.png',
-    poster: 'img/thumb_break_into_tech.jpg',
+    poster: 'img/thumb_break_into_tech.webp',
     description: 'Practical, unfiltered advice on entering tech with non-traditional backgrounds. Learn how to showcase proof of work, leverage online certifications, and stand out to recruiters globally.',
     resource: 'Non-CS Resume & Proof of Work Guide'
   },
@@ -508,7 +534,7 @@ const webinarData = {
     speaker: 'TechRise DTI',
     role: 'Masterclass Series',
     avatar: 'img/Techrise icon logo.png',
-    poster: 'img/thumb_masterclass_jan.jpg',
+    poster: 'img/thumb_masterclass_jan.webp',
     description: 'An essential session for non-technical founders, entrepreneurs, and business owners looking to understand, leverage, and use technology confidently to build and grow their ventures.',
     resource: 'Future Skills Masterclass Slide Deck'
   },
@@ -520,7 +546,7 @@ const webinarData = {
     speaker: 'TechRise DTI',
     role: 'Community Leadership',
     avatar: 'img/Techrise icon logo.png',
-    poster: 'img/thumb_livestream_qa.jpg',
+    poster: 'img/thumb_livestream_qa.webp',
     description: 'Deep-dive conversation on what it takes to scale a tech company from Africa — covering talent acquisition, raising capital, accessing global markets, and leaving a lasting impact.',
     resource: 'TechRise Community Resource Directory'
   }
@@ -706,7 +732,7 @@ const scholarData = {
     role: 'Full-Stack Software Developer',
     location: 'Nigeria',
     badge: 'Cohort 1 Graduate',
-    avatar: 'img/beneficiary_alasa.jpg',
+    avatar: 'img/beneficiary_alasa.webp',
     track: 'Full-Stack Software Engineering (In partnership with Dev & Design)',
     outcome: 'Software Engineer & Tech Builder ✓',
     quote: '"Before TechRise, I had the passion for technology but lacked a capable workstation and structured guidance. The scholarship provided me with a high-performance laptop, internet support, and 6 months of rigorous coding mentorship. Today, I engineer modern web platforms and scalable applications with confidence."',
@@ -717,7 +743,7 @@ const scholarData = {
     role: 'UI/UX & Product Design Scholar',
     location: 'Abuja, Nigeria',
     badge: 'TechRise Scholar',
-    avatar: 'img/beneficiary_binta.jpg',
+    avatar: 'img/beneficiary_binta.webp',
     track: 'UI/UX Design & Digital Operations Track',
     outcome: 'UI/UX Designer ✓',
     quote: '"Being awarded the scholarship through TechRise DTI opened up doors I never thought possible. The practical training in modern design tools, tech workflows, and problem solving empowered me with the confidence to thrive in the modern digital workspace."',
@@ -728,7 +754,7 @@ const scholarData = {
     role: 'UI/UX & Product Designer',
     location: 'Nigeria',
     badge: 'TechRise Scholar',
-    avatar: 'img/beneficiary_etieno.jpg',
+    avatar: 'img/beneficiary_etieno.webp',
     track: 'Product Design & Design Systems (In partnership with Dev & Design)',
     outcome: 'Product Designer ✓',
     quote: '"Through the TechRise scholarship, I mastered user research, wireframing, component design systems, and Figma prototyping. TechRise provided the creative environment, workstation support, and hands-on portfolio feedback I needed to transition into professional product design."',
@@ -739,7 +765,7 @@ const scholarData = {
     role: 'Software Engineering Scholar',
     location: 'Nigeria',
     badge: 'Cohort 1 Graduate',
-    avatar: 'img/beneficiary_adesemoye.jpg',
+    avatar: 'img/beneficiary_adesemoye.webp',
     track: 'Software Engineering & API Architecture (In partnership with Dev & Design)',
     outcome: 'Software Engineer ✓',
     quote: '"The TechRise scholarship gave me the exact tools and accountability I needed to take software engineering seriously. The laptop grant eliminated my technical bottlenecks, while the mentorship helped me understand modern architectural patterns, backend APIs, and database engineering."',
@@ -750,7 +776,7 @@ const scholarData = {
     role: 'Data Analytics & AI Scholar',
     location: 'Nigeria',
     badge: 'Cohort 1 Graduate',
-    avatar: 'img/beneficiary_nurudeen.jpg',
+    avatar: 'img/beneficiary_nurudeen.webp',
     track: 'Data Science & Applied AI (In partnership with Dev & Design)',
     outcome: 'Data Analyst & AI Consultant ✓',
     quote: '"TechRise DTI\'s scholarship opened up the world of data analytics, predictive modeling, and applied AI tools for me. I went from reading tutorials without a computer to building interactive business intelligence dashboards and processing real datasets for actionable business insight."',
@@ -761,7 +787,7 @@ const scholarData = {
     role: 'Web Development & Community Scholar',
     location: 'Nigeria',
     badge: 'Fellowship Scholar',
-    avatar: 'img/beneficiary_okoi.jpg',
+    avatar: 'img/beneficiary_okoi.webp',
     track: 'Front-End Web Development (In partnership with Dev & Design)',
     outcome: 'Web Developer & Community Lead ✓',
     quote: '"The hands-on training and peer community at TechRise helped me transition from zero tech background to building functional web solutions. The mentorship didn\'t just teach me coding; it showed me how technology can solve grassroots community challenges."',
@@ -772,7 +798,7 @@ const scholarData = {
     role: 'Digital Operations & Tech Scholar',
     location: 'Nigeria',
     badge: 'Women in Tech Fellow',
-    avatar: 'img/beneficiary_happiness.jpg',
+    avatar: 'img/beneficiary_happiness.webp',
     track: 'Digital Workplace Operations & Tech Transformation',
     outcome: 'Digital Operations Specialist ✓',
     quote: '"The TechRise scholarship gave me hands-on digital workplace tools and confidence. Learning modern digital tools, client operations software, and productivity workflows allowed me to excel and lead frontdesk digital transformations with poise."',
@@ -783,7 +809,7 @@ const scholarData = {
     role: 'Digital Operations & UI/UX Scholar',
     location: 'Nigeria',
     badge: 'Women in Tech Fellow',
-    avatar: 'img/beneficiary_happiness.jpg',
+    avatar: 'img/beneficiary_happiness.webp',
     track: 'Digital Operations & UI Design (Women in Tech)',
     outcome: 'Digital Operations Specialist ✓',
     quote: '"The TechRise scholarship gave me hands-on digital workplace tools and confidence. Learning modern digital tools, client operations software, and productivity workflows allowed me to excel and lead frontdesk digital transformations with poise."',
@@ -944,3 +970,22 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+
+/* ============================================================
+   CAREERS PAGE — role filter tabs
+   ============================================================ */
+document.querySelectorAll('.roles-tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.roles-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.getAttribute('data-filter');
+    let visible = 0;
+    document.querySelectorAll('#roles-list .role-card').forEach((card) => {
+      const show = filter === 'all' || card.getAttribute('data-category') === filter;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    const note = document.getElementById('no-roles-note');
+    if (note) note.style.display = visible === 0 ? 'block' : 'none';
+  });
+});

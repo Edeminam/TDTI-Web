@@ -9,6 +9,21 @@
   <meta property="og:title" content="Careers — TechRise DTI" />
   <meta property="og:description" content="Join TechRise DTI and help empower the next generation of African tech talent. View open positions and apply today." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://techriseweb.web.app/careers.html" />
+  <meta property="og:site_name" content="TechRise DTI" />
+  <meta property="og:image" content="https://techriseweb.web.app/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Digital map of Africa — TechRise DTI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@techRiseDTI" />
+  <meta name="twitter:title" content="Careers — TechRise DTI" />
+  <meta name="twitter:description" content="Join TechRise DTI and help empower the next generation of African tech talent. View open positions and apply today." />
+  <meta name="twitter:image" content="https://techriseweb.web.app/img/og-image.jpg" />
+  <link rel="canonical" href="https://techriseweb.web.app/careers.html" />
+  <meta name="theme-color" content="#0131f3" />
+  <link rel="icon" type="image/png" href="img/Techrise%20icon%20logo.png" />
+  <link rel="apple-touch-icon" href="img/Techrise%20icon%20logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -154,6 +169,7 @@
   </style>
 </head>
 <body class="careers-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursor-follower"></div>
@@ -169,7 +185,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo" id="nav-logo-link">
-        <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="nav-logo-img" />
+        <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="nav-logo-img" width="596" height="512" />
         <span class="nav-logo-text">TechRise <span class="logo-accent">DTI</span></span>
       </a>
       <div class="nav-center">
@@ -274,7 +290,7 @@
     </div>
   </header>
 
-  <main class="careers-main">
+  <main id="main-content" tabindex="-1" class="careers-main">
 
     <!-- Values -->
     <section class="careers-values-section">
@@ -513,7 +529,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="footer-logo-img" />
+          <img src="img/Techrise icon logo.png" alt="TechRise DTI" class="footer-logo-img" loading="lazy" decoding="async" width="596" height="512" />
           <span class="footer-logo-text">TechRise <span class="footer-logo-accent">DTI</span></span>
         </div>
         <p class="footer-tagline">Driving Digital Transformation &amp; World-Class Tech Education Across Africa.</p>
@@ -561,27 +577,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    document.querySelectorAll('.roles-tab').forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        document.querySelectorAll('.roles-tab').forEach(function(t) { t.classList.remove('active'); });
-        tab.classList.add('active');
-        var filter = tab.getAttribute('data-filter');
-        var roles = document.querySelectorAll('#roles-list .role-card');
-        var visible = 0;
-        roles.forEach(function(card) {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = '';
-            visible++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-        document.getElementById('no-roles-note').style.display = visible === 0 ? 'block' : 'none';
-      });
-    });
-  </script>
 
   <script src="script.js"></script>
 </body>
