@@ -5744,3 +5744,21 @@ img:where([width]) { height: auto; }
   .cursor, .cursor-follower { display: none !important; }
 }
 main:focus { outline: none; }
+
+/* Former inline styles */
+.map-node[data-city="Abuja"] { top: 45%; left: 47%; }
+.map-node[data-city="Lagos"] { top: 48%; left: 45%; }
+.map-node[data-city="Nairobi"] { top: 52%; left: 64%; }
+.map-node[data-city="Accra"] { top: 48%; left: 41%; }
+.map-node[data-city="Dakar"] { top: 42%; left: 34%; }
+.map-node[data-city="Addis Ababa"] { top: 44%; left: 66%; }
+.map-node[data-city="Kigali"] { top: 54%; left: 60%; }
+.map-node[data-city="Johannesburg"] { top: 76%; left: 58%; }
+.map-node[data-city="Cape Town"] { top: 84%; left: 54%; }
+.map-node[data-city="Cairo"] { top: 24%; left: 60%; }
+.sas-card-bar-fill--full { width: 100%; }
+#scholar-search-clear, #scholar-no-results { display: none; }
+.text-center { text-align: center; }
+.overview-title--partners { text-align: center; margin-bottom: 2.5rem; }
+#no-results-state { display: none; }
+.upcoming-live-badge.upcoming-live-badge--purple { background: linear-gradient(135deg, #6c63ff, #a78bfa); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase; }
