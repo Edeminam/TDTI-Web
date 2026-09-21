@@ -994,23 +994,3 @@ document.addEventListener('keydown', (e) => {
     closeScholarModal();
   }
 });
-
-
-/* ============================================================
-   CAREERS PAGE — role filter tabs
-   ============================================================ */
-document.querySelectorAll('.roles-tab').forEach((tab) => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.roles-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const filter = tab.getAttribute('data-filter');
-    let visible = 0;
-    document.querySelectorAll('#roles-list .role-card').forEach((card) => {
-      const show = filter === 'all' || card.getAttribute('data-category') === filter;
-      card.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-    const note = document.getElementById('no-roles-note');
-    if (note) note.style.display = visible === 0 ? 'block' : 'none';
-  });
-});

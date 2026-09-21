@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Careers — TechRise DTI</title>
-  <meta name="description" content="Join the TechRise DTI team and help drive digital transformation across Africa. Explore open roles in tech education, community programs, design, and more." />
+  <meta name="description" content="Join the TechRise DTI team and help drive digital transformation across Africa. Apply for our open Programs Officer role." />
   <meta property="og:title" content="Careers — TechRise DTI" />
-  <meta property="og:description" content="Join TechRise DTI and help empower the next generation of African tech talent. View open positions and apply today." />
+  <meta property="og:description" content="Join TechRise DTI and help empower the next generation of African tech talent. View our open Programs Officer role and apply today." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://techrisedti.org/careers" />
   <meta property="og:site_name" content="TechRise DTI" />
@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@techRiseDTI" />
   <meta name="twitter:title" content="Careers — TechRise DTI" />
-  <meta name="twitter:description" content="Join TechRise DTI and help empower the next generation of African tech talent. View open positions and apply today." />
+  <meta name="twitter:description" content="Join TechRise DTI and help empower the next generation of African tech talent. View our open Programs Officer role and apply today." />
   <meta name="twitter:image" content="https://techrisedti.org/img/og-image.jpg" />
   <link rel="canonical" href="https://techrisedti.org/careers" />
   <meta name="theme-color" content="#0131f3" />
@@ -148,20 +148,10 @@
     .perks-section-title { color: #fff; }
     .perks-section-title em { color: var(--accent-green); }
     .perks-section-desc { color: rgba(255,255,255,0.5); }
-    .careers-cta-section { padding: clamp(80px, 10vw, 120px) 0; background: var(--bg-light); }
-    .careers-cta-card { background: linear-gradient(135deg, var(--bg-dark) 0%, #0d1f50 100%); border-radius: 24px; padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 6vw, 5rem); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; position: relative; overflow: hidden; }
-    .careers-cta-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(1,49,243,0.25), transparent 70%); }
-    .cta-card-content { position: relative; z-index: 2; }
-    .cta-card-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-green); margin-bottom: 1rem; }
-    .cta-card-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem; }
-    .cta-card-desc { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
-    .cta-card-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; position: relative; z-index: 2; flex-shrink: 0; }
     @media (max-width: 768px) {
       .role-card { grid-template-columns: 1fr; }
       .role-card-right { display: none; }
       .roles-header-row { flex-direction: column; align-items: flex-start; }
-      .careers-cta-card { grid-template-columns: 1fr; }
-      .cta-card-actions { width: 100%; }
       .c-stat-divider { display: none; }
       .c-stat-item { padding: 0.75rem 1.5rem; }
     }
@@ -179,18 +169,18 @@
     .value-card::after { content:''; position:absolute; left:0; top:0; height:3px; width:0; background:linear-gradient(90deg,var(--accent-blue),var(--accent-green)); transition:width .5s var(--ease); }
     .value-card:hover::after { width:100%; }
     .perk-icon { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.2rem; color:var(--accent-green); background:rgba(0,174,102,0.1); border:1px solid rgba(0,174,102,0.2); font-size:0; }
-    /* life at techrise */
-    .careers-life-section { padding:clamp(60px,8vw,100px) 0 clamp(40px,6vw,80px); background:var(--bg-light); }
-    .life-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr; grid-template-rows:260px 260px; gap:1rem; }
-    .life-tile { position:relative; border-radius:20px; overflow:hidden; background:var(--bg-dark); }
-    .life-tile:first-child { grid-row:span 2; }
-    .life-tile img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s var(--ease); }
-    .life-tile:hover img { transform:scale(1.06); }
-    .life-tile::after { content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(10,14,26,.85), transparent 55%); }
-    .life-cap { position:absolute; left:1.3rem; right:1.3rem; bottom:1.1rem; z-index:2; color:#fff; }
-    .life-cap b { display:block; font-size:1rem; font-weight:700; }
-    .life-cap span { font-size:.8rem; color:rgba(255,255,255,.65); }
     /* roles */
+    .role-details { background:var(--bg-light); border:1px solid rgba(0,0,0,0.06); border-radius:16px; margin-top:-.4rem; }
+    .role-details summary { cursor:pointer; padding:1.1rem 2.2rem; font-weight:600; font-size:.9rem; color:var(--accent-blue); list-style:none; }
+    .role-details summary::-webkit-details-marker { display:none; }
+    .role-details summary::after { content:' +'; }
+    .role-details[open] summary::after { content:' \2212'; }
+    .role-details summary:focus-visible { outline:2px solid var(--accent-blue); outline-offset:2px; border-radius:16px; }
+    .role-details-body { padding:0 2.2rem 2rem; color:var(--text-muted); font-size:.93rem; line-height:1.7; }
+    .role-details-body h3 { color:var(--bg-dark); font-size:1rem; margin:1.6rem 0 .5rem; }
+    .role-details-body ul { padding-left:1.2rem; display:flex; flex-direction:column; gap:.35rem; }
+    .role-details-body .role-apply-btn { margin-top:1.8rem; }
+    @media (max-width:640px) { .role-details summary { padding:1rem 1.4rem; } .role-details-body { padding:0 1.4rem 1.6rem; } }
     .roles-list { counter-reset:role; }
     .role-card { counter-increment:role; position:relative; padding-left:4.6rem; }
     .role-card::before { content:counter(role,decimal-leading-zero); position:absolute; left:2rem; top:50%; transform:translateY(-50%); font-size:.8rem; font-weight:700; letter-spacing:.08em; color:rgba(10,14,26,.28); transition:color .3s; }
@@ -208,13 +198,11 @@
     .process-desc { font-size:.9rem; color:var(--text-muted); line-height:1.65; }
     @media (max-width:1024px) { .values-grid,.perks-grid { grid-template-columns:repeat(2,1fr); } .process-grid { grid-template-columns:repeat(2,1fr); } }
     @media (max-width:768px) {
-      .life-grid { grid-template-columns:1fr 1fr; grid-template-rows:200px 200px 200px; }
-      .life-tile:first-child { grid-column:span 2; grid-row:auto; }
       .role-card { padding:1.6rem 1.4rem 1.6rem 3.4rem; }
       .role-card::before { left:1.2rem; }
     }
     @media (max-width:560px) { .values-grid,.perks-grid,.process-grid { grid-template-columns:1fr; } }
-    @media (prefers-reduced-motion:reduce) { .life-tile img,.value-card,.role-card,.perk-item { transition:none; } }
+    @media (prefers-reduced-motion:reduce) { .value-card,.role-card,.perk-item { transition:none; } }
   </style>
   <script type="application/ld+json">
 {
@@ -225,7 +213,7 @@
       "@id": "https://techrisedti.org/careers#webpage",
       "url": "https://techrisedti.org/careers",
       "name": "Careers — TechRise DTI",
-      "description": "Join the TechRise DTI team and help drive digital transformation across Africa. Explore open roles in tech education, community programs, design, and more.",
+      "description": "Join the TechRise DTI team and help drive digital transformation across Africa. Apply for our open Programs Officer role.",
       "isPartOf": {
         "@type": "WebSite",
         "url": "https://techrisedti.org/",
@@ -302,11 +290,11 @@
             <span class="menu-toggle-icon">+</span>
           </button>
           <div class="menu-dropdown-list" id="menu-programs-list">
-            <a href="/scholarships" class="menu-sublink">
+            <a href="/scholarships.html" class="menu-sublink">
               <span class="sublink-arrow">&#8594;</span>
               <span>Tech Scholarships</span>
             </a>
-            <a href="/webinars" class="menu-sublink">
+            <a href="/webinars.html" class="menu-sublink">
               <span class="sublink-arrow">&#8594;</span>
               <span>Literacy Workshops &amp; Webinars</span>
             </a>
@@ -314,7 +302,7 @@
         </div>
         <a href="/#stories" class="menu-link" data-index="04">Stories</a>
         <a href="/#partners" class="menu-link" data-index="05">Partners</a>
-        <a href="/careers" class="menu-link active" data-index="06">Careers</a>
+        <a href="/careers.html" class="menu-link active" data-index="06">Careers</a>
         <a href="/#contact" class="menu-link" data-index="07">Get Involved</a>
       </nav>
       <div class="menu-footer">
@@ -352,9 +340,6 @@
         <a href="#open-roles" class="btn-primary">
           <span>View Open Roles</span>
           <span class="btn-arrow">&#8595;</span>
-        </a>
-        <a href="mailto:careers@techrisedti.org" class="btn-secondary">
-          <span>Send Open Application</span>
         </a>
       </div>
       <div class="careers-stats-strip reveal-up" data-delay="0.4">
@@ -424,22 +409,6 @@
       </div>
     </section>
 
-    <!-- Life at TechRise -->
-    <section class="careers-life-section">
-      <div class="careers-inner">
-        <div class="careers-section-label reveal-up">( LIFE AT TECHRISE )</div>
-        <h2 class="careers-section-title reveal-up" data-delay="0.05">The Work You'll <em>Be Part Of</em></h2>
-        <p class="careers-section-desc reveal-up" data-delay="0.1">Every role feeds into programs that put real skills, devices and mentorship in the hands of African youth.</p>
-        <div class="life-grid reveal-up" data-delay="0.15">
-          <figure class="life-tile"><img src="img/program_education.webp" alt="Learners in a TechRise digital skills class" loading="lazy" decoding="async" /><figcaption class="life-cap"><b>Digital Education</b><span>Hands-on training for grassroots learners</span></figcaption></figure>
-          <figure class="life-tile"><img src="img/program_women_tech.webp" alt="Women in Tech cohort" loading="lazy" decoding="async" /><figcaption class="life-cap"><b>Women in Tech</b><span>STEM mentorship &amp; placement</span></figcaption></figure>
-          <figure class="life-tile"><img src="img/program_community.webp" alt="TechRise community programme" loading="lazy" decoding="async" /><figcaption class="life-cap"><b>Community Programs</b><span>Local impact, pan-African reach</span></figcaption></figure>
-          <figure class="life-tile"><img src="img/program_rurallabs.webp" alt="Rural digital lab" loading="lazy" decoding="async" /><figcaption class="life-cap"><b>Rural Labs</b><span>Bridging the digital divide</span></figcaption></figure>
-          <figure class="life-tile"><img src="img/program_scholarships.webp" alt="Tech scholarship recipients" loading="lazy" decoding="async" /><figcaption class="life-cap"><b>Tech Scholarships</b><span>Funded pathways into tech careers</span></figcaption></figure>
-        </div>
-      </div>
-    </section>
-
     <!-- Open Roles -->
     <section class="careers-roles-section" id="open-roles">
       <div class="careers-inner">
@@ -448,24 +417,17 @@
             <div class="careers-section-label reveal-up">( OPEN POSITIONS )</div>
             <h2 class="careers-section-title reveal-up" data-delay="0.05">Current <em>Openings</em></h2>
           </div>
-          <div class="roles-filter-tabs reveal-up" data-delay="0.1" id="roles-filter-tabs">
-            <button class="roles-tab active" data-filter="all">All Roles</button>
-            <button class="roles-tab" data-filter="programs">Programs</button>
-            <button class="roles-tab" data-filter="tech">Tech</button>
-            <button class="roles-tab" data-filter="comms">Comms</button>
-            <button class="roles-tab" data-filter="volunteer">Volunteer</button>
-          </div>
         </div>
         <div class="roles-list reveal-up" data-delay="0.15" id="roles-list">
 
-          <a href="mailto:careers@techrisedti.org?subject=Application%20%E2%80%94%20Program%20Manager%2C%20Scholarships" class="role-card" data-category="programs">
+          <a href="mailto:info@techrisedti.org?subject=Application%20%E2%80%94%20Programs%20Officer" class="role-card" data-category="programs">
             <div class="role-card-left">
               <div class="role-tags">
                 <span class="role-tag full-time">Full-Time</span>
                 <span class="role-tag remote">Remote</span>
                 <span class="role-tag">Programs</span>
               </div>
-              <div class="role-title">Program Manager — Tech Scholarships</div>
+              <div class="role-title">Programs Officer</div>
               <div class="role-meta">
                 <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> TechRise DTI</span>
                 <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg> Abuja / Remote</span>
@@ -475,93 +437,27 @@
             <div class="role-card-right"><span class="role-apply-btn">Apply &#8599;</span></div>
           </a>
 
-          <a href="mailto:careers@techrisedti.org?subject=Application%20%E2%80%94%20Content%20%26%20Social%20Media%20Lead" class="role-card" data-category="comms">
-            <div class="role-card-left">
-              <div class="role-tags">
-                <span class="role-tag full-time">Full-Time</span>
-                <span class="role-tag remote">Remote</span>
-                <span class="role-tag">Communications</span>
-              </div>
-              <div class="role-title">Content &amp; Social Media Lead</div>
-              <div class="role-meta">
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> TechRise DTI</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg> Remote &middot; Africa-based</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Open Now</span>
-              </div>
+          <details class="role-details">
+            <summary>View full job description</summary>
+            <div class="role-details-body">
+              <h3>Role Summary</h3>
+              <p>The Programs Officer will support the planning, implementation, monitoring, and evaluation of TechRise DTI’s digital-skills, education, youth-empowerment, and community-development programs. The officer will coordinate program activities, manage stakeholder relationships, prepare reports, and contribute to grant writing and fundraising efforts that support the organisation’s mission and sustainability.</p>
+              <h3>Key Responsibilities</h3>
+              <ul><li>Plan, coordinate, and implement programs according to approved objectives, timelines, and budgets.</li><li>Develop work plans, implementation schedules, program frameworks, and supporting documentation.</li><li>Coordinate digital-skills training, webinars, workshops, scholarships, community outreach, and youth-development initiatives.</li><li>Research relevant local and international grant opportunities, funding calls, and partnership prospects.</li><li>Write compelling grant proposals, concept notes, letters of inquiry, and funding applications.</li><li>Prepare project narratives, logical frameworks, theories of change, budgets, sustainability plans, and supporting grant documents.</li><li>Maintain a grant calendar and track deadlines, submission requirements, donor feedback, and reporting obligations.</li><li>Collaborate with the leadership and finance teams to prepare program budgets and monitor the use of funds.</li><li>Monitor program implementation and measure progress against agreed deliverables and key performance indicators.</li><li>Collect and analyse program data, participant feedback, outcomes, lessons learned, and success stories.</li><li>Prepare periodic program, impact, donor, and management reports.</li><li>Maintain relationships with beneficiaries, trainers, volunteers, partners, donors, government institutions, and community stakeholders.</li><li>Support partnership development, sponsorship acquisition, donor engagement, and resource mobilisation.</li><li>Ensure compliance with organisational policies, donor requirements, safeguarding standards, and relevant regulations.</li><li>Identify program risks and recommend suitable mitigation measures.</li><li>Represent TechRise DTI at stakeholder meetings, conferences, community engagements, and other relevant events.</li><li>Support the preparation of communication materials highlighting program activities, achievements, and impact.</li><li>Perform other program-related responsibilities assigned by management.</li></ul>
+              <h3>Qualifications and Experience</h3>
+              <ul><li>Bachelor’s degree in Development Studies, Project Management, Public Administration, Social Sciences, International Relations, Communications, Information Technology, or a related field.</li><li>A minimum of two to three years of relevant experience in program coordination, nonprofit management, community development, education, youth empowerment, or digital-skills initiatives.</li><li>Demonstrable experience in grant research, grant writing, proposal development, and donor reporting.</li><li>Experience preparing concept notes, project proposals, implementation plans, budgets, and monitoring frameworks.</li><li>Previous experience working with an NGO, nonprofit organisation, social enterprise, or development-focused institution is desirable.</li><li>Familiarity with donor requirements, funding application procedures, and project-compliance standards.</li><li>Proficiency in Microsoft Office, Google Workspace, project-management platforms, and online collaboration tools.</li></ul>
+              <h3>Required Skills and Competencies</h3>
+              <ul><li>Excellent grant writing, research, proposal development, and report-writing skills.</li><li>Strong program and project-management abilities.</li><li>Excellent written and verbal communication skills.</li><li>Strong stakeholder-engagement and relationship-management skills.</li><li>Ability to manage multiple programs, priorities, and deadlines.</li><li>Good analytical, monitoring, evaluation, and problem-solving skills.</li><li>Strong attention to detail and commitment to accurate documentation.</li><li>Ability to work independently and collaborate effectively with a remote or multidisciplinary team.</li><li>Creativity, initiative, accountability, and a passion for technology, education, youth development, and social impact.</li></ul>
+              <h3>Key Performance Indicators</h3>
+              <p>Performance will be assessed based on:</p>
+              <ul><li>Timely and successful implementation of assigned programs.</li><li>Quality and number of grant proposals and funding applications submitted.</li><li>Grant success rate and value of funding secured.</li><li>Achievement of program targets and measurable beneficiary outcomes.</li><li>Accuracy and timeliness of program and donor reports.</li><li>Quality of stakeholder, beneficiary, and partner engagement.</li><li>Compliance with approved budgets, donor requirements, and organisational policies.</li><li>Effectiveness of program monitoring, documentation, and impact reporting.</li></ul>
+              <h3>Compensation</h3>
+              <p>The Programs Officer will receive a monthly salary of ₦150,000, subject to the organisation’s employment terms, statutory obligations, and performance requirements.</p>
+              <a class="role-apply-btn" href="mailto:info@techrisedti.org?subject=Application%20%E2%80%94%20Programs%20Officer">Apply for this role &#8599;</a>
             </div>
-            <div class="role-card-right"><span class="role-apply-btn">Apply &#8599;</span></div>
-          </a>
-
-          <a href="mailto:careers@techrisedti.org?subject=Application%20%E2%80%94%20Frontend%20Developer" class="role-card" data-category="tech">
-            <div class="role-card-left">
-              <div class="role-tags">
-                <span class="role-tag part-time">Part-Time</span>
-                <span class="role-tag remote">Remote</span>
-                <span class="role-tag">Technology</span>
-              </div>
-              <div class="role-title">Frontend Developer (React / HTML)</div>
-              <div class="role-meta">
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> TechRise DTI</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg> Remote</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Open Now</span>
-              </div>
-            </div>
-            <div class="role-card-right"><span class="role-apply-btn">Apply &#8599;</span></div>
-          </a>
-
-          <a href="mailto:careers@techrisedti.org?subject=Application%20%E2%80%94%20Partnerships%20%26%20Fundraising%20Associate" class="role-card" data-category="programs">
-            <div class="role-card-left">
-              <div class="role-tags">
-                <span class="role-tag full-time">Full-Time</span>
-                <span class="role-tag remote">Remote</span>
-                <span class="role-tag">Partnerships</span>
-              </div>
-              <div class="role-title">Partnerships &amp; Fundraising Associate</div>
-              <div class="role-meta">
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> TechRise DTI</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg> Nigeria / Remote</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Open Now</span>
-              </div>
-            </div>
-            <div class="role-card-right"><span class="role-apply-btn">Apply &#8599;</span></div>
-          </a>
-
-          <a href="mailto:careers@techrisedti.org?subject=Application%20%E2%80%94%20Webinar%20Host%20%26%20Masterclass%20Facilitator" class="role-card" data-category="volunteer">
-            <div class="role-card-left">
-              <div class="role-tags">
-                <span class="role-tag volunteer">Volunteer</span>
-                <span class="role-tag remote">Remote</span>
-                <span class="role-tag">Education</span>
-              </div>
-              <div class="role-title">Webinar Host &amp; Masterclass Facilitator</div>
-              <div class="role-meta">
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> TechRise DTI</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg> Fully Remote</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Rolling Basis</span>
-              </div>
-            </div>
-            <div class="role-card-right"><span class="role-apply-btn">Apply &#8599;</span></div>
-          </a>
-
-          <a href="mailto:careers@techrisedti.org?subject=Application%20%E2%80%94%20UI%2FUX%20Designer" class="role-card" data-category="tech">
-            <div class="role-card-left">
-              <div class="role-tags">
-                <span class="role-tag part-time">Part-Time</span>
-                <span class="role-tag remote">Remote</span>
-                <span class="role-tag">Design</span>
-              </div>
-              <div class="role-title">UI/UX Designer — Digital Products</div>
-              <div class="role-meta">
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> TechRise DTI</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg> Remote</span>
-                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Open Now</span>
-              </div>
-            </div>
-            <div class="role-card-right"><span class="role-apply-btn">Apply &#8599;</span></div>
-          </a>
+          </details>
 
         </div>
-        <p class="no-roles-note" id="no-roles-note">No roles match that filter. Try another category or send an open application below.</p>
       </div>
     </section>
 
@@ -621,27 +517,6 @@
         </div>
       </div>
     </section>
-    <!-- CTA -->
-    <section class="careers-cta-section">
-      <div class="careers-inner">
-        <div class="careers-cta-card reveal-up">
-          <div class="cta-card-content">
-            <div class="cta-card-tag">( DON'T SEE YOUR ROLE? )</div>
-            <h3 class="cta-card-title">Send Us an Open<br>Application</h3>
-            <p class="cta-card-desc">We're always looking for exceptional people passionate about Africa's digital future. If you don't see an exact match, tell us who you are and how you'd like to contribute.</p>
-          </div>
-          <div class="cta-card-actions">
-            <a href="mailto:careers@techrisedti.org" class="btn-primary">
-              <span>Email Your Application</span>
-              <span class="btn-arrow">&#8599;</span>
-            </a>
-            <a href="/#contact" class="btn-secondary">
-              <span>Get in Touch</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
 
   </main>
 
@@ -677,9 +552,9 @@
       </div>
       <div class="footer-links">
         <a href="/">Home</a>
-        <a href="/scholarships">Tech Scholarships</a>
-        <a href="/webinars">Webinars</a>
-        <a href="/careers">Careers</a>
+        <a href="/scholarships.html">Tech Scholarships</a>
+        <a href="/webinars.html">Webinars</a>
+        <a href="/careers.html">Careers</a>
         <a href="/#contact">Get Involved</a>
       </div>
       <div class="footer-social">
