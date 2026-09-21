@@ -67,7 +67,6 @@ function animateHeroIn() {
 
 /* ── NAVBAR SCROLL BEHAVIOUR ─────────────────────────────── */
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
   const current = window.scrollY;
@@ -87,7 +86,6 @@ window.addEventListener('scroll', () => {
       navbar.classList.remove('scrolled', 'light-mode');
     }
   }
-  lastScroll = current;
 }, { passive: true });
 
 /* ── HAMBURGER / FULLSCREEN MENU ──────────────────────────── */
@@ -98,12 +96,17 @@ function openMenu() {
   menuOverlay.classList.add('open');
   document.body.classList.add('menu-open');
   menuToggle.setAttribute('aria-expanded', 'true');
+  menuOverlay.inert = false;
+  const firstLink = menuOverlay.querySelector('a, button');
+  firstLink && firstLink.focus({ preventScroll: true });
 }
 
 function closeMenu() {
+  if (!menuOverlay) return;
   menuOverlay.classList.remove('open');
   document.body.classList.remove('menu-open');
   menuToggle.setAttribute('aria-expanded', 'false');
+  menuOverlay.inert = true;
 }
 
 menuToggle && menuToggle.addEventListener('click', () => {
@@ -326,7 +329,11 @@ dots.forEach(dot => {
 
 /* Auto-advance stories */
 if (cards.length > 1 && !prefersReducedMotion) {
-  setInterval(() => showStory(currentStory + 1), 6000);
+  const storiesEl = cards[0].parentElement;
+  let storiesPaused = false;
+  ['mouseenter', 'focusin'].forEach(ev => storiesEl.addEventListener(ev, () => { storiesPaused = true; }));
+  ['mouseleave', 'focusout'].forEach(ev => storiesEl.addEventListener(ev, () => { storiesPaused = false; }));
+  setInterval(() => { if (!storiesPaused && !document.hidden) showStory(currentStory + 1); }, 6000);
 }
 
 /* ── DONATE AMOUNT CHIPS ─────────────────────────────────── */
@@ -461,7 +468,7 @@ const webinarData = {
     duration: 'YouTube Full Webinar',
     speaker: 'TechRise DTI',
     role: 'Webinar Series & Mentorship',
-    avatar: 'img/Techrise icon logo.png',
+    avatar: 'img/techrise-icon-logo.png',
     poster: 'img/thumb_ai_advantage.webp',
     description: 'A transformative session exploring the real-world impact of Artificial Intelligence — who stands to gain the most, how African youth can leverage AI as a tool for economic advancement, and what skills matter in an AI-powered world.',
     resource: 'TechRise AI & Future Skills Guide'
@@ -473,7 +480,7 @@ const webinarData = {
     duration: 'YouTube Full Webinar',
     speaker: 'TechRise DTI',
     role: 'Webinar Series & Mentorship',
-    avatar: 'img/Techrise icon logo.png',
+    avatar: 'img/techrise-icon-logo.png',
     poster: 'img/thumb_reinvent_future.webp',
     description: 'A transformative webinar exploring how beginners from any background can pivot into the digital economy, develop in-demand tech skills, and position themselves for high-growth global opportunities.',
     resource: 'TechRise Digital Career Starter Guide'
@@ -485,7 +492,7 @@ const webinarData = {
     duration: 'YouTube Full Masterclass',
     speaker: 'TechRise DTI',
     role: 'Tech Career Mentors',
-    avatar: 'img/Techrise icon logo.png',
+    avatar: 'img/techrise-icon-logo.png',
     poster: 'img/thumb_tech_path.webp',
     description: 'Learn how to navigate the vast tech ecosystem, discover whether Software Engineering, Product Design, Data, or Cloud fits your natural strengths, and build a structured roadmap from initial curiosity to your first tech job.',
     resource: 'Tech Career Roadmap Checklist'
@@ -497,7 +504,7 @@ const webinarData = {
     duration: 'YouTube Masterclass',
     speaker: 'TechRise DTI',
     role: 'Design Academy Mentors',
-    avatar: 'img/Techrise icon logo.png',
+    avatar: 'img/techrise-icon-logo.png',
     poster: 'img/thumb_uiux_masterclass.webp',
     description: 'An in-depth masterclass breaking down the core principles of User Interface (UI) and User Experience (UX) design, wireframing, Figma workflows, user research, and creating high-converting digital products.',
     resource: 'UI/UX Design Starter Kit & Wireframe Templates'
@@ -509,7 +516,7 @@ const webinarData = {
     duration: 'YouTube Webinar',
     speaker: 'TechRise DTI',
     role: 'Skills Development Lead',
-    avatar: 'img/Techrise icon logo.png',
+    avatar: 'img/techrise-icon-logo.png',
     poster: 'img/thumb_design_code_create.webp',
     description: 'Bridging the gap between visual design and software coding. Discover the essential tools, workflows, and mindset required to turn creative ideas into functional digital applications.',
     resource: 'Design to Code Workflow Guide'
@@ -521,7 +528,7 @@ const webinarData = {
     duration: 'YouTube Masterclass',
     speaker: 'TechRise DTI',
     role: 'Career Mentorship Series',
-    avatar: 'img/Techrise icon logo.png',
+    avatar: 'img/techrise-icon-logo.png',
     poster: 'img/thumb_break_into_tech.webp',
     description: 'Practical, unfiltered advice on entering tech with non-traditional backgrounds. Learn how to showcase proof of work, leverage online certifications, and stand out to recruiters globally.',
     resource: 'Non-CS Resume & Proof of Work Guide'
@@ -533,7 +540,7 @@ const webinarData = {
     duration: 'YouTube Masterclass',
     speaker: 'TechRise DTI',
     role: 'Masterclass Series',
-    avatar: 'img/Techrise icon logo.png',
+    avatar: 'img/techrise-icon-logo.png',
     poster: 'img/thumb_masterclass_jan.webp',
     description: 'An essential session for non-technical founders, entrepreneurs, and business owners looking to understand, leverage, and use technology confidently to build and grow their ventures.',
     resource: 'Future Skills Masterclass Slide Deck'
@@ -545,7 +552,7 @@ const webinarData = {
     duration: 'YouTube Live Stream',
     speaker: 'TechRise DTI',
     role: 'Community Leadership',
-    avatar: 'img/Techrise icon logo.png',
+    avatar: 'img/techrise-icon-logo.png',
     poster: 'img/thumb_livestream_qa.webp',
     description: 'Deep-dive conversation on what it takes to scale a tech company from Africa — covering talent acquisition, raising capital, accessing global markets, and leaving a lasting impact.',
     resource: 'TechRise Community Resource Directory'
@@ -650,6 +657,7 @@ const modalSpeakerNameTab = document.getElementById('modal-speaker-name-tab');
 const modalSpeakerRole = document.getElementById('modal-speaker-role');
 
 let currentVideoKey = 'tech-path';
+let modalOpener = null;
 
 function openVideoModal(videoKey) {
   const data = webinarData[videoKey] || webinarData['tech-path'];
@@ -675,15 +683,21 @@ function openVideoModal(videoKey) {
   document.querySelectorAll('.modal-tab-content').forEach(c => c.classList.toggle('active', c.id === 'tab-overview'));
 
   if (videoModal) {
+    modalOpener = document.activeElement;
     videoModal.classList.add('active');
+    videoModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    modalCloseBtn && modalCloseBtn.focus();
   }
 }
 
 function closeVideoModal() {
   if (videoModal) {
     videoModal.classList.remove('active');
+    videoModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (modalOpener && modalOpener.focus) modalOpener.focus();
+    modalOpener = null;
     if (modalYoutubeIframe) {
       modalYoutubeIframe.src = ''; // Stops audio and video playback immediately
     }
@@ -712,6 +726,17 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
     closeVideoModal();
   }
+});
+
+/* Keep keyboard focus inside the open modal */
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Tab' || !videoModal || !videoModal.classList.contains('active')) return;
+  const focusable = Array.from(videoModal.querySelectorAll('a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])'))
+    .filter(el => el.offsetParent !== null);
+  if (!focusable.length) return;
+  const first = focusable[0], last = focusable[focusable.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 });
 
 /* Modal Tabs */

@@ -26,7 +26,7 @@
   --glow-amber:   rgba(255,173,9,0.20);
 
   /* Typography */
-  --font-sans:    'Space Grotesk', 'Inter', sans-serif;
+  --font-sans:    'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-serif:   'Playfair Display', Georgia, serif;
 
   /* Spacing */
