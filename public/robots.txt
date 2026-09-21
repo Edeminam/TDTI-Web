@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://techriseweb.web.app/sitemap.xml
+Sitemap: https://techrisedti.org/sitemap.xml

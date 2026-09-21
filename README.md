@@ -20,4 +20,4 @@ Template variables: `from_name`, `from_email`, `interest`, `message`. Restrict a
 ## Notes
 - After editing `style.css` / `script.js`, bump the `?v=` query string in each HTML file so returning visitors get the new version.
 - The CSP in `firebase.json` only allows self-hosted scripts, Google Fonts, YouTube embeds and EmailJS. Update it if you add another third-party service.
-- Canonical/OG/sitemap URLs use `https://techriseweb.web.app`; replace it everywhere when a custom domain is connected.
+- Canonical/OG/sitemap URLs use `https://techrisedti.org`.
