@@ -461,6 +461,18 @@ if (heroMapWrapper) {
    ============================================================ */
 
 const webinarData = {
+  'work-smarter-ai': {
+    youtubeId: '2KwCqiIbd1w',
+    title: 'WORK SMARTER WITH AI: 10 Practical AI Workflows You Can Use Immediately',
+    category: 'Artificial Intelligence',
+    duration: 'YouTube Full Masterclass',
+    speaker: 'TechRise DTI',
+    role: 'Masterclass Series',
+    avatar: 'img/techrise-icon-logo.png',
+    poster: 'img/thumb_work_smarter_ai.webp',
+    description: 'A hands-on virtual masterclass revealing 10 practical AI workflows you can start using immediately to work faster, think sharper, and achieve more — designed for African youth ready to harness AI as a real career advantage.',
+    resource: 'Work Smarter With AI Workflow Guide'
+  },
   'ai-advantage': {
     youtubeId: 'XzXXCWhyRro',
     title: 'THE AI ADVANTAGE - Who Will Benefit Most From Artificial Intelligence?',
