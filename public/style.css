@@ -2139,6 +2139,45 @@ a.program-row-link:hover .program-row-badge {
   box-shadow: 0 10px 28px rgba(255, 173, 9, 0.55);
 }
 
+/* Ongoing training: green live status */
+.sas-stat-open-badge.is-ongoing {
+  color: #00ae66;
+}
+
+.sas-card-tag-ongoing {
+  color: #00ae66;
+  background: rgba(0, 174, 102, 0.1);
+  border: 1px solid rgba(0, 174, 102, 0.3);
+}
+
+.sas-stat-open-badge.is-ongoing .sas-open-pulse,
+.sas-card-tag-ongoing .sas-open-pulse,
+.scholar-open-badge.is-ongoing .scholar-pulse {
+  background: #00ae66;
+  animation-name: sas-pulse-green;
+}
+
+@keyframes sas-pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 174, 102, 0.6); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 174, 102, 0); }
+}
+
+/* Closed registration: muted, non-interactive */
+
+.sas-btn-primary.is-closed,
+.sas-card-register-btn.is-closed {
+  background: rgba(138, 143, 156, 0.18);
+  color: #8a8f9c;
+  box-shadow: none;
+  cursor: var(--cursor-hide, default);
+}
+
+.sas-btn-primary.is-closed:hover,
+.sas-card-register-btn.is-closed:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .sas-grid {
@@ -4217,6 +4256,31 @@ a.detail-value:hover { color: var(--accent-cyan); }
   box-shadow: 0 8px 24px rgba(255, 173, 9, 0.5);
 }
 
+.scholar-open-badge.is-ongoing {
+  background: rgba(0, 174, 102, 0.18);
+  border-color: rgba(0, 174, 102, 0.5);
+  color: #2fd18a;
+}
+
+/* Closed registration: muted, non-interactive */
+
+.scholar-apply-btn.is-closed,
+.scholar-cta-actions .btn-primary.is-closed {
+  background: rgba(138, 143, 156, 0.2);
+  color: #8a8f9c;
+  box-shadow: none;
+  border-color: transparent;
+  cursor: var(--cursor-hide, default);
+}
+
+.scholar-apply-btn.is-closed:hover,
+.scholar-cta-actions .btn-primary.is-closed:hover {
+  transform: none;
+  box-shadow: none;
+  background: rgba(138, 143, 156, 0.2);
+  color: #8a8f9c;
+}
+
 /* ── Container ───────────────────────────────────────────── */
 .scholar-container {
   max-width: var(--container);
@@ -5559,7 +5623,8 @@ html, body {
   /* ─── SCHOLARSHIPS ─── */
   .scholars-grid { grid-template-columns: 1fr; }
   .scholar-cta-actions { flex-direction: column; align-items: stretch; }
-  .scholar-cta-actions a { text-align: center; justify-content: center; }
+  .scholar-cta-actions a,
+  .scholar-cta-actions .btn-primary { text-align: center; justify-content: center; }
 
   /* Card action bar */
   .card-action-bar { flex-direction: column; gap: 0.5rem; }

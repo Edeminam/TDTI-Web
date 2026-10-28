@@ -391,6 +391,52 @@
   transform: scale(1.04);
 }
 
+/* Closed role: static card, no hover lift or apply action */
+
+.role-tag.closed { background: rgba(10, 14, 26, 0.08); color: var(--text-muted); }
+
+.role-card.is-closed {
+  cursor: default;
+}
+
+.role-card.is-closed:hover {
+  background: var(--bg-light);
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: none;
+  transform: none;
+}
+
+.role-card.is-closed:hover::before {
+  color: rgba(10, 14, 26, 0.28);
+}
+
+.role-card.is-closed .role-title {
+  color: var(--text-muted);
+}
+
+.role-card.is-closed .role-apply-btn,
+.role-card.is-closed:hover .role-apply-btn {
+  background: rgba(10, 14, 26, 0.08);
+  color: var(--text-muted);
+  transform: none;
+}
+
+.roles-empty-note {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.roles-empty-note a {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.role-closed-note {
+  margin-top: 1.8rem;
+  font-weight: 600;
+  color: var(--bg-dark);
+}
+
 /* Expandable job description */
 
 .role-details {
