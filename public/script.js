@@ -139,61 +139,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* ── PARTICLE CANVAS ─────────────────────────────────────── */
-const canvas = document.getElementById('hero-particles');
-if (canvas && !prefersReducedMotion) {
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let animId;
-
-  function resizeCanvas() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-
-  function createParticles() {
-    particles = [];
-    const count = Math.floor((canvas.width * canvas.height) / 18000);
-    const brandColors = ['1,49,243', '0,174,102', '255,173,9'];
-    for (let i = 0; i < count; i++) {
-      particles.push({
-        x:  Math.random() * canvas.width,
-        y:  Math.random() * canvas.height,
-        r:  Math.random() * 1.8 + 0.4,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-        a:  Math.random() * 0.6 + 0.2,
-        color: brandColors[Math.floor(Math.random() * brandColors.length)]
-      });
-    }
-  }
-
-  function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${p.color},${p.a})`;
-      ctx.fill();
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-    });
-    animId = requestAnimationFrame(drawParticles);
-  }
-
-  resizeCanvas();
-  createParticles();
-  drawParticles();
-
-  const ro = new ResizeObserver(() => {
-    resizeCanvas();
-    createParticles();
-  });
-  ro.observe(canvas.parentElement);
-}
-
 /* ── SCROLL REVEAL ───────────────────────────────────────── */
 function initRevealObserver() {
   const els = document.querySelectorAll('.reveal-up:not(.hero .reveal-up)');
@@ -461,6 +406,18 @@ if (heroMapWrapper) {
    ============================================================ */
 
 const webinarData = {
+  'think-before-click': {
+    youtubeId: 'OkuvDhTzdCg',
+    title: 'THINK BEFORE YOU CLICK: Online Safety and Security Tips',
+    category: 'Online Safety',
+    duration: 'YouTube Full Webinar',
+    speaker: 'TechRise DTI',
+    role: 'Webinar Series & Mentorship',
+    avatar: 'img/techrise-icon-logo.png',
+    poster: 'img/thumb_think_before_click.webp',
+    description: 'A practical webinar on staying safe online — how to spot phishing links and scams, protect your passwords and accounts, and build everyday security habits before you click, share, or sign in.',
+    resource: 'TechRise Online Safety Checklist'
+  },
   'work-smarter-ai': {
     youtubeId: '2KwCqiIbd1w',
     title: 'WORK SMARTER WITH AI: 10 Practical AI Workflows You Can Use Immediately',

@@ -152,65 +152,54 @@
   </div>
 
   <main id="main-content" tabindex="-1">
-  <section class="hero" id="hero">
-    <div class="hero-bg">
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
       <div class="hero-map-wrapper" id="hero-map-wrapper">
-        <img src="img/africa_tech_network.webp" alt="Digital map of Africa" class="hero-bg-img" fetchpriority="high" width="1376" height="768" />
-        <div class="hero-map-nodes">
-          <div class="map-node" data-city="Abuja"></div>
-          <div class="map-node" data-city="Lagos"></div>
-          <div class="map-node" data-city="Nairobi"></div>
-          <div class="map-node" data-city="Accra"></div>
-          <div class="map-node" data-city="Dakar"></div>
-          <div class="map-node" data-city="Addis Ababa"></div>
-          <div class="map-node" data-city="Kigali"></div>
-          <div class="map-node" data-city="Johannesburg"></div>
-          <div class="map-node" data-city="Cape Town"></div>
-          <div class="map-node" data-city="Cairo"></div>
-        </div>
+        <img src="img/africa_tech_network.webp" alt="" class="hero-bg-img" fetchpriority="high" width="1376" height="768" />
       </div>
       <div class="hero-bg-overlay"></div>
-      <canvas class="hero-particles" id="hero-particles"></canvas>
     </div>
-    <div class="hero-content">
-      <div class="hero-tag reveal-up">
-        <span class="tag-dot"></span>
-        <span>Africa's Digital Future, Now</span>
-      </div>
-      <h1 class="hero-headline">
-        <span class="headline-line reveal-up" data-delay="0.1">EMPOWERING</span>
-        <span class="headline-line headline-mid reveal-up" data-delay="0.2">
-          <span class="headline-word">AFRICA</span>
-          <span class="headline-word">THROUGH</span>
-        </span>
-        <span class="headline-line headline-accent reveal-up" data-delay="0.3">DIGITAL TRANSFORMATION</span>
-      </h1>
-    </div>
-    <div class="hero-footer">
-      <div class="hero-footer-left">
-        <p class="hero-desc">TechRise DTI drives digital transformation<br>across Africa through grassroots education,<br>youth empowerment &amp; community development.</p>
-      </div>
-      <div class="hero-footer-center">
-        <div class="hero-services-label">WORKING ON</div>
-        <div class="hero-services">
-          <div class="hero-services-col">
-            <span>/ Grassroots Education</span>
-            <span>/ Youth Empowerment</span>
-          </div>
-          <div class="hero-services-col">
-            <span>/ Digital Infrastructure</span>
-            <span>/ Women in Tech</span>
-          </div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow reveal-up">
+          <span class="hero-eyebrow-dot"></span>
+          Non-Profit &middot; Digital Transformation Initiative
+        </p>
+        <h1 class="hero-title reveal-up" id="hero-title" data-delay="0.08">
+          Building Africa&rsquo;s next generation of <em>tech talent.</em>
+        </h1>
+        <p class="hero-lede reveal-up" data-delay="0.16">
+          Free digital-skills training, scholarships and mentorship that take young Africans from their first lesson to their first opportunity &mdash; delivered with communities and industry partners.
+        </p>
+        <div class="hero-actions reveal-up" data-delay="0.24">
+          <a href="#programs" class="hero-btn hero-btn-primary">
+            <span>Explore Our Programs</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#donate" class="hero-btn hero-btn-ghost">Support Our Work</a>
         </div>
+        <ul class="hero-proof reveal-up" data-delay="0.32">
+          <li><strong>1,000+</strong><span>Youth trained in Start A Skill Cohort 1</span></li>
+          <li><strong>10</strong><span>Free webinars &amp; masterclasses</span></li>
+          <li><strong>2023</strong><span>Founded in Abuja, Nigeria</span></li>
+        </ul>
       </div>
-      <div class="hero-footer-right">
-        <a href="mailto:info@techrisedti.org">info@techrisedti.org</a>
-        <span>Abuja, Nigeria · EST 2023</span>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
+
+      <aside class="hero-panel reveal-up" data-delay="0.36" aria-label="What's happening at TechRise DTI">
+        <div class="hero-panel-label">What&rsquo;s happening</div>
+        <a href="#sas-program" class="hero-panel-item">
+          <span class="hero-panel-status hero-panel-status--live"><span class="hero-panel-pulse"></span>Training ongoing</span>
+          <span class="hero-panel-title">Start A Skill &mdash; Cohort 2</span>
+          <span class="hero-panel-text">Free digital-skills training in partnership with the Veronica Anthony Foundation.</span>
+          <span class="hero-panel-link">See the program &rarr;</span>
+        </a>
+        <a href="/webinars.html" class="hero-panel-item">
+          <span class="hero-panel-status">Latest webinar &middot; 22 Oct</span>
+          <span class="hero-panel-title">Think Before You Click: Online Safety &amp; Security Tips</span>
+          <span class="hero-panel-link">Watch the recording &rarr;</span>
+        </a>
+      </aside>
     </div>
   </section>
 
@@ -694,6 +683,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2026-09-21" defer></script>
+  <script src="script.js?v=2026-10-28" defer></script>
 </body>
 </html>
