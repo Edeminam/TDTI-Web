@@ -3598,73 +3598,6 @@ a.detail-value:hover { color: var(--accent-cyan); }
   margin-bottom: 0;
 }
 
-/* Host Webinar Callout */
-.host-webinar-section {
-  padding: 5rem 0 3rem;
-  background: #060913;
-  position: relative;
-}
-.host-card {
-  position: relative;
-  background: linear-gradient(135deg, rgba(1, 49, 243, 0.25) 0%, rgba(13, 21, 38, 0.9) 60%), #0d1526;
-  border: 1px solid rgba(1, 49, 243, 0.35);
-  border-radius: 28px;
-  padding: clamp(2.5rem, 5vw, 4rem);
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-}
-.host-content {
-  position: relative;
-  z-index: 2;
-  max-width: 780px;
-}
-.host-tag {
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: var(--accent-green);
-  margin-bottom: 1rem;
-}
-.host-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.15;
-  margin-bottom: 1.25rem;
-}
-.host-desc {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
-}
-.host-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.host-buttons .btn-secondary {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: none;
-}
-.host-buttons .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #fff;
-  box-shadow: none;
-}
-.host-glow {
-  position: absolute;
-  right: -100px; bottom: -100px;
-  width: 350px; height: 350px;
-  background: radial-gradient(circle, rgba(0, 174, 102, 0.25) 0%, transparent 70%);
-  filter: blur(60px);
-  pointer-events: none;
-}
-
 /* ============================================================
    VIDEO MODAL PLAYER STYLES
    ============================================================ */
@@ -5498,13 +5431,6 @@ html, body {
   }
   .upcoming-header-row { flex-direction: column; align-items: flex-start; }
 
-  /* Host webinar */
-  .host-webinar-section { padding: 3.5rem 0 2.5rem; }
-  .host-card { border-radius: 20px; }
-  .host-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
-  .host-buttons { flex-direction: column; }
-  .host-buttons a, .host-buttons button { width: 100%; justify-content: center; }
-
   /* Video modal */
   .video-modal-backdrop { padding: 0.75rem; }
   .video-modal-window { border-radius: 16px; max-height: 96vh; }
@@ -5661,11 +5587,6 @@ html, body {
   .upcoming-subtitle { font-size: 0.85rem; }
   .upcoming-item { padding: 1rem; border-radius: 14px; }
   .upcoming-item-title { font-size: 1rem; }
-
-  .host-webinar-section { padding: 2.5rem 0 2rem; }
-  .host-card { padding: 1.75rem; border-radius: 16px; }
-  .host-title { font-size: clamp(1.4rem, 8vw, 2rem); }
-  .host-desc { font-size: 0.9rem; }
 
   /* ─── SCHOLARSHIPS ─── */
   .scholar-hero { padding: 80px 1rem 2.5rem; }
