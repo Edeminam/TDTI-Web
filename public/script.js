@@ -963,3 +963,25 @@ document.addEventListener('keydown', (e) => {
     closeScholarModal();
   }
 });
+
+/* ── SCHOLAR VIDEO SHORTS (click-to-play, one at a time) ─── */
+const shortPlayLinks = document.querySelectorAll('.short-play');
+function stopShorts() {
+  document.querySelectorAll('.short-frame iframe').forEach(f => f.remove());
+  shortPlayLinks.forEach(l => { l.hidden = false; });
+}
+shortPlayLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    stopShorts();
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${link.dataset.shortId}?autoplay=1&rel=0&playsinline=1`;
+    iframe.title = link.getAttribute('aria-label');
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    link.hidden = true;
+    link.parentElement.appendChild(iframe);
+    iframe.focus();
+  });
+});
