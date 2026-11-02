@@ -707,3 +707,10 @@
     transition: none;
   }
 }
+
+/* Open role */
+.role-tag.open { background: rgba(0, 174, 102, 0.12); color: var(--accent-green); }
+.role-apply-btn:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 3px; }
+.role-details-body p a:not(.role-apply-btn) { color: var(--accent-blue); font-weight: 600; }
+.role-details-body > .role-apply-btn { color: #fff; text-decoration: none; }
+.role-details-body > .role-apply-btn:hover { background: var(--accent-blue); }
